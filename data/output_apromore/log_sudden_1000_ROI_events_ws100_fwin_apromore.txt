@@ -1,0 +1,13 @@
+sudden_trace_noise0_1000_ROI.xes.gz
+events
+Initial window size = 100
+Window type = FWIN
+Noise filter threshold = 0.1
+Drift detection sensitivity = Low
+
+(1) Drift detected at event: 1805 (Sat Jan 12 17:42:13 BRST 2019) after reading 1855 events.
+
+
+(2) Drift detected at event: 5602 (Thu Jan 17 19:36:49 BRST 2019) after reading 5652 events.
+
+

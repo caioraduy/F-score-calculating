@@ -1,0 +1,7 @@
+sudden_trace_noise0_1000_sw.xes.gz
+events
+Initial window size = 25
+Window type = FWIN
+Noise filter threshold = 0.1
+Drift detection sensitivity = Low
+
