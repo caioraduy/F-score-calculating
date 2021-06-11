@@ -6,6 +6,7 @@ import os
 def calcula_f_score(list_drifts_detectados, tamanho_janela, numero_de_drifts_reais_da_base, drift_reias):
     dist_max = int(tamanho_janela)
     numero_drifts_reais = numero_de_drifts_reais_da_base
+    # sugiro passar direto os drifts reais não 1 ou 9
     if numero_de_drifts_reais_da_base == 9:
         drifts_reais = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
     elif numero_de_drifts_reais_da_base == 1:
@@ -174,6 +175,11 @@ def adiciona_para_dataframe(tool, nome_log, abordagem, tipo_janelamento, tamanho
                                        'Tipo janelamento', 'Tamanho da janela',
                                        'F-score'])
 
+    # não recomendo o uso de variável global
+    # o que eu faria, sempre receberia o dataframe atual, adicionaria e retornaria
+    # importante, um ponto de lentidão deve ser o fato de adicionar ao dataframe
+    # a melhor abordagen seria adicionar a uma lista, e no final converter a lista
+    # para dataframe, deixaria mais rápido - nesse caso você daria append na lista
     global df
     df = df.append(df2, ignore_index=True)
 
@@ -214,7 +220,11 @@ def acha_os_drifts_detectados_calcula_f_score_adiciona_no_df_apromore(f, abordag
                 drift.append(int(splitline[6]))
             elif abordagem == 'event':
                 drift.append(int(splitline[5]))
+    # pq 9 fixo, se você passa a lista de drifts_reais, para obter a quantidade pode utilizar a função len
+    # aí não precisa desse parâmetro, passa a lista com drifts, é só defini-la aqui
+    # melhor do que dentro da def calcula_f_score, ok?
     f_score = calcula_f_score(drift, tamanho_da_janela, 9, drifts_reais)
+    # ótimo usar essa função!
     adiciona_para_dataframe(tool, nome_log, abordagem, tipo_janelamento, tamanho_da_janela,
                             f_score)
 
@@ -245,6 +255,8 @@ def le_output_dos_frameworks_e_calcula_f_score(caminho_procura):
 
 if __name__ == '__main__':
     df = pd.DataFrame()
+    # use o mesmo nome de variável e comente o que não está utilizando, facilita pois não precisa
+    # procurar onde a variável é utilizada para alterar
     caminho_procura_5k_apromore = 'D:/PIBIC/arquivos_analise_programa/trace_9_drift_apromore/'
     caminho_procura_5k_apromore_teste = 'data/output_apromore_5k'
     caminho_procura_sudden_1000_apromore = 'D:/PIBIC/arquivos_analise_programa/trace_1_drift_apromore/'
@@ -262,4 +274,5 @@ if __name__ == '__main__':
     le_output_dos_frameworks_e_calcula_f_score(caminho_procura_5k_apromore_teste)
     le_output_dos_frameworks_e_calcula_f_score(caminho_procura_sudden_1000_apromore_teste)
     print(df)
+    # utilize caminho relativo, sugiro criar uma pasta output dentro de data
     df.to_excel('D:\\PIBIC\\resultados_pibic\\resultados_logs_ddm_runs.xlsx', index=False)
