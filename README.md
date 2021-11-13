@@ -1,7 +1,7 @@
 # F-score-calculating
 This the code for calculating the F-score of Tools for process drift detection.
 The structure of the program is divided by:
-1. F_score_Calcultor (main): funcions needed and the main code for calculating the F-score
+1. : funcions needed and the main code for calculating the F-score
 2. DATA: this file files was data for testing the program
     -data/data_5k-> Event logs with 5000 and 9 sudden drifts from ""
     -data/data_5k_teste-> sample from data_5k
@@ -14,5 +14,9 @@ The structure of the program is divided by:
     -data/data_teste_sudden.zip-> Zipped archives of data_teste_sudden
     -data/output_apromore.zip-> Zipped archives of data/output_apromore
     -data/output_apromore_5k.zip-> Zipped archives of data/output_apromore_5k
+    Creat this directory and add the arhives .txt that are available at https://www.kaggle.com/caioraduy/output-off-vdd-experiments
+    -data/VDD_output_5k
+    -data/VDD_output_1000
+    
    
    
