@@ -287,7 +287,8 @@ if __name__ == '__main__':
     
     #here, we put the path to the files
     # the caminho_vdd_sudden_1000 and data/VDD_output_1000 has to be filled with .txt filles that are bigger than 100MB, they have to be downloaded at Kaggle and inputted at the 
-    #respective directory 'data/VDD_output_1000' and 'data/VDD_output_5k'
+    #respective directory 'data/VDD_output_1000' and 'data/VDD_output_5k'. Both files are availabel at https://www.kaggle.com/caioraduy/output-off-vdd-experiments, the must be 
+    #downloaded and the directory must be created at the local directory data
     caminho_vdd_sudden_5k
     caminho_procura_5k_apromore = 'data/output_apromore_5k/'
     caminho_procura_5k_apromore_teste = 'data/output_apromore_5k'
