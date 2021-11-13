@@ -2,7 +2,8 @@
 This the code for calculating the F-score of Tools for process drift detection.
 The structure of the program is divided by:
 1. : funcions needed and the main code for calculating the F-score
-2. DATA: this file files was data for testing the program
+2. Prom_F_Score_Calculator.py: this program calculates F-score from ProM Concept Drift plugin, the detected drift and the real drift must be inputted manually as def parameters
+4. DATA: this file files was data for testing the program
     -data/data_5k-> Event logs with 5000 and 9 sudden drifts from ""
     -data/data_5k_teste-> sample from data_5k
     -data/data_1000-> Event logs with 0 noise, trace ordering, 1000 traces, 1 drift
