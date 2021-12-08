@@ -4,38 +4,35 @@ import os
 
 # This is one of the most important function of the program, it utlizes the method in the article for
 # calculating the F-score
-def calcula_f_score(list_drifts_detectados, tamanho_janela, numero_de_drifts_reais_da_base, drift_reias):
-    dist_max = int(tamanho_janela)
-    numero_drifts_reais = numero_de_drifts_reais_da_base
-    # sugiro passar direto os drifts reais não 1 ou 9
-    if numero_de_drifts_reais_da_base == 9:
-        drifts_reais = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
-    elif numero_de_drifts_reais_da_base == 1:
-        drifts_reais = [500]
+def calcula_f_score(detected_drifts_list, win_size, number_of_real_drift_dataset, real_drifts_detected):
+    dist_max = int(win_size)
+    numero_drifts_reais = number_of_real_drift_dataset
+
+    if number_of_real_drift_dataset == 9:
+        real_drifts = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
+    elif number_of_real_drift_dataset == 1:
+        real_drifts = [500]
     else:
-        drifts_reais= drift_reias
+        real_drifts= real_drifts_detected
 
 
-    list_drifts_detectados = list_drifts_detectados
+    detected_drifts_list = detected_drifts_list
 
-    drifts_reais.sort()
+    real_drifts.sort()
     tp = []
     fp = []
-    mean_delay_diferenca = []
-    for x in range(0, len(list_drifts_detectados)):
-        for y in range(0, len(drifts_reais)):
+
+    for x in range(0, len(detected_drifts_list)):
+        for y in range(0, len(real_drifts)):
             TP_found = False
-            distancia = list_drifts_detectados[x] - drifts_reais[y]
+            distancia = detected_drifts_list[x] - real_drifts[y]
             if distancia >= 0 and distancia <= dist_max:
                 tp.append(distancia)
                 TP_found = True
-                drifts_reais.remove(drifts_reais[y])
+                real_drifts.remove(real_drifts[y])
                 break
         if not TP_found:
             fp.append(distancia)
-    s = 0
-    for x in mean_delay_diferenca:
-        s = s + x
     TP = len(tp)
     FP = len(fp)
     FN = numero_drifts_reais - TP
