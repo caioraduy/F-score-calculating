@@ -75,4 +75,6 @@ inputted manually as def parameters
 
 
 Both VDD_APROMORE_F_Score_Calculator.py and Prom_F_Score_Calculator.py have # with comments for the  better understanding of the program structure
+
+If have questions and doubts send a e-mail at: raduycaio@gmail.com or caio.raduy@pucpr.edu.br
   
