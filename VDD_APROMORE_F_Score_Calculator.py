@@ -186,26 +186,26 @@ def finds_real_drifts_dataset2(approach, arquivo):
 df = pd.DataFrame()
 
 #this function add the data to a pandas dataframe that will be the output of the method
-def adiciona_para_dataframe(tool, nome_log, abordagem, tipo_janelamento, tamanho_da_janela,
-                            f_score):
-    linha = [[tool, nome_log, abordagem, tipo_janelamento, tamanho_da_janela,
-              f_score]]
-    df2 = pd.DataFrame(linha, columns=['Tool', 'Nome log', 'Abordagem',
-                                       'Tipo janelamento', 'Tamanho da janela',
+def add_to_dataframe(tool, log_name, approach, windowing_type, window_size,
+                     f_score):
+    line = [[tool, log_name, approach, windowing_type, window_size,
+             f_score]]
+    df2 = pd.DataFrame(line, columns=['Tool', 'Log name', 'Approach',
+                                       'Windowing type', 'Window size',
                                        'F-score'])
 
     global df
     df = df.append(df2, ignore_index=True)
 
 #this function finds the drifts detected, calculate the F-score and add the F-score and other information to the dataframe
-def acha_os_drifts_detectados_calcula_f_score_adiciona_no_df_vdd(f, abordagem, tamanho_da_janela,drifts_reais,
-                                                                 tool, nome_log,
-                                                                 tipo_janelamento,win_step):
-    procura_console_vdd = 'x lines:'
+def find_detected_drift_calculate_F_score_and_add_results_in_df_VDD_system(f, approach,
+                                                                           window_size,
+                                                                           real_drifts, tool, log_name, windowing_type, win_step):
+    search_in_vdd_console = 'x lines:'
     drift = []
     found = False
-    lista_drifts_reais= drifts_reais
-    drift_por_cluster = []
+    real_drift_list= real_drifts
+    drifts_by_cluster = []
     for line in f:
         if found:
             s1 = line.replace('[', '')
@@ -213,65 +213,65 @@ def acha_os_drifts_detectados_calcula_f_score_adiciona_no_df_vdd(f, abordagem, t
             s3 = s2.replace('\n', '')
             splitline = s3.split(',')
 
-            drift_por_cluster = [int(x) for x in splitline]
-            lista_de_drifts_por_traces_vdd = []
-            for x in drift_por_cluster:
+            drifts_by_cluster = [int(x) for x in splitline]
+            drift_by_trace_VDD = []
+            for x in drifts_by_cluster:
                 trace = x * win_step + 1
-                lista_de_drifts_por_traces_vdd.append(trace)
-            f_score = F_score_calcule(lista_de_drifts_por_traces_vdd, tamanho_da_janela, 1,
-                                      lista_drifts_reais)
-            adiciona_para_dataframe(tool, nome_log, abordagem, tipo_janelamento, tamanho_da_janela,
-                                    f_score)
+                drift_by_trace_VDD.append(trace)
+            f_score = F_score_calcule(drift_by_trace_VDD, window_size, 1,
+                                      real_drift_list)
+            add_to_dataframe(tool, log_name, approach, windowing_type, window_size,
+                             f_score)
             break
-        if procura_console_vdd in line:
+        if search_in_vdd_console in line:
             found = True
 
 # this function finds the detected drifts and calculate de f-score for the toll Apromore ProDrift plugin
-def acha_os_drifts_detectados_calcula_f_score_adiciona_no_df_apromore(f, abordagem, tamanho_da_janela, drifts_reais,
-                                                                      tool, nome_log, tipo_janelamento):
+def find_detected_drifts_calcule_F_score_and_add_to_df_APROMORE(f, approach, window_size, real_drifts,
+                                                                tool, log_name, windowing_type):
     drift = []
     for line in f:
         splitline = line.split(' ')
         if len(splitline) > 7:
-            if abordagem == 'trace':
+            if approach == 'trace':
                 drift.append(int(splitline[6]))
-            elif abordagem == 'event':
+            elif approach == 'event':
                 drift.append(int(splitline[5]))
-    f_score = F_score_calcule(drift, tamanho_da_janela, 9, drifts_reais)
-    adiciona_para_dataframe(tool, nome_log, abordagem, tipo_janelamento, tamanho_da_janela,
-                            f_score)
+    f_score = F_score_calcule(drift, window_size, 9, real_drifts)
+    add_to_dataframe(tool, log_name, approach, windowing_type, window_size,
+                     f_score)
 
 # this function reads the output from te frameworks and calls the function for F-score calcule
-def le_output_dos_frameworks_e_calcula_f_score(caminho_procura):
-    for raiz, diretorios, arquivos in os.walk(caminho_procura):
-        for arquivo in arquivos:
-            caminho_completo = os.path.join(raiz, arquivo)
-            if '5k' in arquivo:
-                if 'apromore' in arquivo:
-                    tool, nome_log, abordagem, tipo_janelamento, tamanho_da_janela \
-                    = extracts_information_from_dataset1_Apromore_file(arquivo)
-                elif 'vdd' in arquivo:
-                    tool, nome_log, abordagem, tipo_janelamento, tamanho_da_janela, win_step \
-                        =extracts_information_from_dataset1_VDD_file(arquivo)
-                drifts_reais = finds_real_drifts_dataset1(abordagem, arquivo)
-            elif '1000' in arquivo:
-                if 'apromore' in arquivo:
-                    tool, nome_log, abordagem, tipo_janelamento, tamanho_da_janela \
-                    = extracts_information_from_dataset1_apromore_file(arquivo)
-                elif 'vdd' in arquivo:
-                    tool, nome_log, abordagem, tipo_janelamento, tamanho_da_janela, win_step \
-                        = extracts_information_from_dataset2_VDD_file(arquivo)
+def read_framework_output_and_calcule_F_score(path_search):
+    for root, directories, files in os.walk(path_search):
+        for file in files:
+            full_path = os.path.join(root, file)
+            if '5k' in file:
+                if 'apromore' in file:
+                    tool, log_name, approach, windowing_type, window_size \
+                    = extracts_information_from_dataset1_Apromore_file(file)
+                elif 'vdd' in file:
+                    tool, log_name, approach, windowing_type, window_size, win_step \
+                        =extracts_information_from_dataset1_VDD_file(file)
+                real_drifts = finds_real_drifts_dataset1(approach, file)
+            elif '1000' in file:
+                if 'apromore' in file:
+                    tool, log_name, approach, windowing_type, window_size \
+                    = extracts_information_from_dataset1_apromore_file(file)
+                elif 'vdd' in file:
+                    tool, log_name, approach, windowing_type, window_size, win_step \
+                        = extracts_information_from_dataset2_VDD_file(file)
 
-                drifts_reais = finds_real_drifts_dataset2(abordagem, arquivo)
-            with open(caminho_completo, 'r', errors='ignore') as f:
-                if 'apromore' in arquivo:
-                    acha_os_drifts_detectados_calcula_f_score_adiciona_no_df_apromore(f, abordagem, tamanho_da_janela,
-                                                                                      drifts_reais, tool,
-                                                                                      nome_log, tipo_janelamento)
-                elif 'vdd' in arquivo:
-                    acha_os_drifts_detectados_calcula_f_score_adiciona_no_df_vdd(f, abordagem, tamanho_da_janela,
-                                                                                 drifts_reais, tool,
-                                                                                 nome_log, tipo_janelamento,win_step)
+                real_drifts = finds_real_drifts_dataset2(approach, file)
+            with open(full_path, 'r', errors='ignore') as f:
+                if 'apromore' in file:
+                    find_detected_drifts_calcule_F_score_and_add_to_df_APROMORE(f, approach, window_size,
+                                                                                real_drifts, tool,
+                                                                                log_name, windowing_type)
+                elif 'vdd' in file:
+                    find_detected_drift_calculate_F_score_and_add_results_in_df_VDD_system(f, approach, window_size,
+                                                                                           real_drifts, tool,
+                                                                                           log_name, windowing_type, win_step)
 
 
 if __name__ == '__main__':
@@ -281,13 +281,12 @@ if __name__ == '__main__':
     # the caminho_vdd_sudden_1000 and data/VDD_output_1000 has to be filled with .txt filles that are bigger than 100MB, they have to be downloaded at Kaggle and inputted at the 
     #respective directory 'data/VDD_output_1000' and 'data/VDD_output_5k'. Both files are availabel at https://www.kaggle.com/caioraduy/output-off-vdd-experiments, the must be 
     #downloaded and the directory must be created at the local directory data
-    caminho_vdd_sudden_5k
     caminho_procura_5k_apromore = 'data/output_apromore_5k/'
     caminho_procura_5k_apromore_teste = 'data/output_apromore_5k'
     caminho_procura_sudden_1000_apromore = 'data/output_apromore/'
     caminho_procura_sudden_1000_apromore_teste = 'data/output_apromore'
-    caminho_vdd_sudden_1000 = 'data/VDD_output_1000'
-    caminho_vdd_sudden_5k='data/VDD_output_5k'
+    caminho_vdd_sudden_1000 = 'D:/raduy/Documents/PIBIC/Console_vdd_drift_all/vdd_drift_all_sudden_1000'
+    caminho_vdd_sudden_5k='D:/raduy/Documents/PIBIC/Console_vdd_drift_all/vdd_drift_all_5k'
     procura_console_vdd = 'x lines:'
   
     caminho_logs_5k = 'data/data_5k/'
@@ -297,10 +296,10 @@ if __name__ == '__main__':
     
     find_real_drifts_in_xes_file(caminho_logs_5k)
     find_real_drifts_in_xes_file(caminho_logs_1000)
-    le_output_dos_frameworks_e_calcula_f_score(caminho_procura_5k_apromore)
-    le_output_dos_frameworks_e_calcula_f_score(caminho_procura_sudden_1000_apromore)
-    le_output_dos_frameworks_e_calcula_f_score(caminho_vdd_sudden_1000)
-    le_output_dos_frameworks_e_calcula_f_score(caminho_vdd_sudden_5k)
+    read_framework_output_and_calcule_F_score(caminho_procura_5k_apromore)
+    read_framework_output_and_calcule_F_score(caminho_procura_sudden_1000_apromore)
+    read_framework_output_and_calcule_F_score(caminho_vdd_sudden_1000)
+    read_framework_output_and_calcule_F_score(caminho_vdd_sudden_5k)
 
 
 
