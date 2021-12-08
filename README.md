@@ -16,27 +16,40 @@ We must save the output as a pattern, because the program uses the file name to 
           log_name= cb5k
           number_of_sub_log_used=50 
           number_of_sliBy_used=25
-          fille name: cb5k_9drifts_subL50_sliBy25_driftAll_vdd.txt
-     Dataset 2) log_name+'_1drifts_'+'subL'+ number_of_sub_log_used + '_sliBy'+ number_of_sliBy_used '_driftAll_vdd'+.txt
+          file name: cb5k_9drifts_subL50_sliBy25_driftAll_vdd.txt
+     
+    Dataset 2) log_name+'_1drifts_'+'subL'+ number_of_sub_log_used + '_sliBy'+ number_of_sliBy_used '_driftAll_vdd'+.txt
      log_name, number_of_sub_log_used, number_of_sliBy_used are string variables
      example:
           log_name= sudden_trace_noise0_1000_cb
           number_of_sub_log_used=50 
           number_of_sliBy_used=25
-          fille name:sudden_trace_noise0_1000_cb_1drift_subL50_sliBy25_driftAll_vdd.txt
+          file name:sudden_trace_noise0_1000_cb_1drift_subL50_sliBy25_driftAll_vdd.txt
            
-1.2 Apromore patters:   
+1.2 Apromore patterns:   
        
-       Dataset 1) 'log'+log_name+ drift_type+ 'ws' + window_size + windowing_type +'apromore'.txt
-       lpg_name, window_size, windowing_type are string variables
+     Dataset 1) 'log_'+log_name+ drift_analisys + '_ws' + window_size + '_' + windowing_type +'_apromore'.txt
+       log_name, window_size, windowing_type are string variables
        example:
 	      log_name= lp2.5k
-		  window_size=50
-		  windowing_type= fwin
-		  file name:log_lp2.5k_trace_ws25_fwin_apromore
-		 
-          	    
-                
+	      drift_analisys= trace
+	      window_size=50
+	      windowing_type= fwin
+              file name:log_lp2.5k_trace_ws25_fwin_apromore
+	      
+     Dataset 2) 
+     'log_'+ drift_type_of_the_event_log +'_'+ size_of_the_event_log +'_'+ pattern_of_log + '_'+ drift_analisys + '_ws' + window_size + '_'+ windowing_type +'_' +'apromore'.txt
+       size_of_the_event_log, size_of_the_event_log, pattern_of_log and window_size are string variables
+       examples:
+               log_name:sudden_trace_noise0_1000_cb
+                        drift_type_of_the_event_log= sudden
+                        size_of_the_event_log= 1000
+                        pattern_of_log= cb
+                window_size: 50
+               windowing_type= adaptive
+               file name: log_sudden_1000_cb_trace_ws50_adaptive_apromore.txt
+                        
+           
 2.Prom_F_Score_Calculator.py: This program calculates F-score from ProM Concept Drift plugin, the detected drift and the real drift must be 
 inputted manually as def parameters
 
