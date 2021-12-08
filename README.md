@@ -18,7 +18,7 @@ We must save the output as a pattern, because the program uses the file name to 
           number_of_sliBy_used=25
           file name: cb5k_9drifts_subL50_sliBy25_driftAll_vdd.txt
      
-    Dataset 2) log_name+'_1drifts_'+'subL'+ number_of_sub_log_used + '_sliBy'+ number_of_sliBy_used '_driftAll_vdd'+.txt
+    Dataset 2) log_name+'_1drift_'+'subL'+ number_of_sub_log_used + '_sliBy'+ number_of_sliBy_used '_driftAll_vdd'+.txt
      log_name, number_of_sub_log_used, number_of_sliBy_used are string variables
      example:
           log_name= sudden_trace_noise0_1000_cb
