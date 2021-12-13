@@ -29,38 +29,3 @@ Window type = FWIN
 
 
 (9) Sudden drift detected at trace: 4525 (Wed May 03 06:24:26 BRT 2006) after reading 4535 traces.
-
-
-cf5k.mxml
-runs
-Initial window size = 32
-Window type = FWIN
-*********************************************
-
-(1) Sudden drift detected at trace: 519 (Tue May 04 11:56:18 BRT 2004) after reading 529 traces.
-
-
-(2) Sudden drift detected at trace: 1025 (Wed Aug 04 07:10:33 BRT 2004) after reading 1035 traces.
-
-
-(3) Sudden drift detected at trace: 1520 (Tue Nov 02 12:28:45 BRST 2004) after reading 1530 traces.
-
-
-(4) Sudden drift detected at trace: 2025 (Wed Feb 02 14:25:34 BRST 2005) after reading 2035 traces.
-
-
-(5) Sudden drift detected at trace: 2521 (Tue May 03 12:08:12 BRT 2005) after reading 2531 traces.
-
-
-(6) Sudden drift detected at trace: 3023 (Tue Aug 02 13:23:26 BRT 2005) after reading 3033 traces.
-
-
-(7) Sudden drift detected at trace: 3520 (Wed Nov 02 12:58:45 BRST 2005) after reading 3530 traces.
-
-
-(8) Sudden drift detected at trace: 4028 (Fri Feb 03 09:15:14 BRST 2006) after reading 4038 traces.
-
-
-(9) Sudden drift detected at trace: 4525 (Wed May 03 06:24:26 BRT 2006) after reading 4535 traces.
-
-

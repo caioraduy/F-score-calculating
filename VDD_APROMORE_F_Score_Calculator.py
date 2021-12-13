@@ -259,7 +259,7 @@ def find_detected_drift_and_calculate_f_score_vdd(f, approach,
     return new_line
 
 
-# this function finds the detected drifts and calculate de f-score for the toll Apromore ProDrift plugin
+# finds the detected drifts and calculates de f-score for the tool Apromore ProDrift plugin
 def find_detected_drifts_calcule_f_score_apromore(f, approach, window_size, real_drifts,
                                                   tool, log_name, windowing_type):
     drift = []
