@@ -1,0 +1,24 @@
+sudden_trace_noise0_1000_cb.xes
+runs
+Initial window size = 32
+Window type = FWIN
+*********************************************
+
+sudden_trace_noise0_1000_cb.xes
+runs
+Initial window size = 32
+Window type = FWIN
+*********************************************
+
+sudden_trace_noise0_1000_cb.xes
+runs
+Initial window size = 32
+Window type = FWIN
+*********************************************
+
+sudden_trace_noise0_1000_cb.xes
+runs
+Initial window size = 32
+Window type = FWIN
+*********************************************
+
