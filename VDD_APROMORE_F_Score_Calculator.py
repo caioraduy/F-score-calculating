@@ -77,8 +77,6 @@ def extracts_information_from_dataset2_apromore_file(file_name):
     windows_size = splitline[1]
     windows_size = windows_size[2:]
     windowing_type = splitline[2]
-    if windowing_type == 'fwin': # for using the name in the paper
-        windowing_type = 'fixed'
     # log_name = splitline[1] + ' ' + splitline[2] + ' ' + splitline[3]
 
     if windows_size == 'default':
@@ -121,8 +119,6 @@ def extracts_information_from_dataset1_apromore_file(file_name):
     else:
         windows_size = int(windows_size)
     windowing_type = splitline[4]
-    if windowing_type == 'fwin': # for using the name in the paper
-        windowing_type = 'fixed'
     tool = 'Apromore - ProDrift'
 
     return tool, log_name, approach, windowing_type, windows_size

@@ -29,8 +29,8 @@ def ProM_F_score_calculation(drifts_detected=[], real_drifts=[]):
 
     lista_drifts_reais_detectados = []
     for x in range(0, len(list_drifts_detectados)):
+        TP_found = False
         for y in range(0, len(drifts_reais)):
-            TP_found = False
             distancia = list_drifts_detectados[x] - drifts_reais[y]
             if distancia >= 0 and distancia <= dist_max:
                 tp.append(distancia)

@@ -1,9 +1,0 @@
-sudden_trace_noise0_1000_IOR.xes
-runs
-Initial window size = 200
-Window type = FWIN
-*********************************************
-
-(1) Sudden drift detected at trace: 542 (Fri Jan 18 13:28:25 BRST 2019) after reading 608 traces.
-
-
