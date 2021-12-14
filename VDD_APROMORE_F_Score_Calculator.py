@@ -232,7 +232,8 @@ def find_detected_drift_and_calculate_f_score_vdd(f, approach,
             window_with_drift = [int(x) for x in splitline]
             trace_with_drift_VDD = []
             for x in window_with_drift:
-                trace = x * win_step + 1
+                # trace = x * win_step + 1
+                trace = x * (win_step + 1)
                 trace_with_drift_VDD.append(trace)
             f_score = calculate_f_score(trace_with_drift_VDD, window_size, real_drift_list)
             if len(real_drifts) == 9:
