@@ -1,0 +1,33 @@
+ROI5k.xes
+runs
+Initial window size = 125
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 520 (Sun Mar 06 12:26:35 BRT 2005) after reading 638 traces.
+
+
+(2) Sudden drift detected at trace: 1074 (Wed Aug 09 06:16:46 BRT 2006) after reading 1192 traces.
+
+
+(3) Sudden drift detected at trace: 1639 (Sun Mar 18 07:43:38 BRT 2007) after reading 1760 traces.
+
+
+(4) Sudden drift detected at trace: 2106 (Sun Feb 10 07:24:51 BRST 2008) after reading 2217 traces.
+
+
+(5) Sudden drift detected at trace: 2597 (Fri Mar 13 10:29:33 BRT 2009) after reading 2729 traces.
+
+
+(6) Sudden drift detected at trace: 3182 (Tue Aug 17 06:11:14 BRT 2010) after reading 3317 traces.
+
+
+(7) Sudden drift detected at trace: 3567 (Fri Mar 11 10:48:35 BRT 2011) after reading 3674 traces.
+
+
+(8) Sudden drift detected at trace: 4086 (Wed Feb 08 13:11:36 BRST 2012) after reading 4204 traces.
+
+
+(9) Sudden drift detected at trace: 4617 (Sat Mar 16 12:40:11 BRT 2013) after reading 4742 traces.
+
+

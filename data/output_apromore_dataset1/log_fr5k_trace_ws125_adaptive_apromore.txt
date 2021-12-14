@@ -1,0 +1,21 @@
+fr5k.xes
+runs
+Initial window size = 125
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 535 (Fri Mar 11 11:36:29 BRT 2005) after reading 590 traces.
+
+
+(2) Sudden drift detected at trace: 1612 (Sun Mar 18 09:01:44 BRT 2007) after reading 1657 traces.
+
+
+(3) Sudden drift detected at trace: 3074 (Sun Aug 08 07:17:14 BRT 2010) after reading 3115 traces.
+
+
+(4) Sudden drift detected at trace: 3575 (Wed Mar 16 06:30:51 BRT 2011) after reading 3613 traces.
+
+
+(5) Sudden drift detected at trace: 4599 (Sun Mar 17 09:57:48 BRT 2013) after reading 4640 traces.
+
+
