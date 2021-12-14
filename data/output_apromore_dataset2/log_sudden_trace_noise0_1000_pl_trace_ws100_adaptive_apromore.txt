@@ -1,0 +1,6 @@
+sudden_trace_noise0_1000_pl.xes
+runs
+Initial window size = 100
+Window type = ADWIN
+*********************************************
+

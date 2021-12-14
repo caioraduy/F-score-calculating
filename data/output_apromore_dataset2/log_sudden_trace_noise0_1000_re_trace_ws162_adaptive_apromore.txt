@@ -1,0 +1,9 @@
+sudden_trace_noise0_1000_re.xes
+runs
+Initial window size = 162
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 523 (Fri Jan 18 02:41:22 BRST 2019) after reading 642 traces.
+
+

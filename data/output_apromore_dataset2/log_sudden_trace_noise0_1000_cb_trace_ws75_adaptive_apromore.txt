@@ -1,0 +1,6 @@
+sudden_trace_noise0_1000_cb.xes
+runs
+Initial window size = 75
+Window type = ADWIN
+*********************************************
+
