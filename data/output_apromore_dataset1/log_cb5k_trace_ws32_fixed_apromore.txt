@@ -1,0 +1,12 @@
+cb5k.mxml
+runs
+Initial window size = 32
+Window type = FWIN
+*********************************************
+
+cb5k.mxml
+runs
+Initial window size = 32
+Window type = FWIN
+*********************************************
+

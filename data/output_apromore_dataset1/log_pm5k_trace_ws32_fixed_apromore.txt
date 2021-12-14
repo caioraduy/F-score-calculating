@@ -1,0 +1,9 @@
+pm5k.mxml
+runs
+Initial window size = 32
+Window type = FWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 1525 (Sat Mar 10 13:41:22 BRT 2007) after reading 1535 traces.
+
+
