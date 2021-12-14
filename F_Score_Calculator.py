@@ -199,23 +199,6 @@ def finds_real_drifts_dataset2(approach, arquivo):
         real_drifts_list.append(real_drifts)
         return real_drifts_list
 
-
-# df = pd.DataFrame()
-#
-#
-# # this function add the data to a pandas dataframe that will be the output of the method
-# def add_to_dataframe(tool, log_name, approach, windowing_type, window_size,
-#                      f_score):
-#     line = [[tool, log_name, approach, windowing_type, window_size,
-#              f_score]]
-#     df2 = pd.DataFrame(line, columns=['Tool', 'Log name', 'Approach',
-#                                       'Windowing type', 'Window size',
-#                                       'F-score'])
-#
-#     global df
-#     df = df.append(df2, ignore_index=True)
-
-
 # finds the detected drifts, VDD only reports the windows with drift, so we have to identify the trace index
 # then the function calculates the F-score and returns it into a list
 def find_detected_drift_and_calculate_f_score_vdd(f, approach,
@@ -253,8 +236,6 @@ def find_detected_drift_and_calculate_f_score_vdd(f, approach,
                         'F-score': f_score,
                         'Real drifts': real_drift_list,
                         'Detected drifts': trace_with_drift_VDD}
-            # add_to_dataframe(tool, log_name, approach, windowing_type, window_size,
-            #                  f_score)
             break
         if search_in_vdd_console in line:
             found = True
@@ -349,109 +330,96 @@ def read_framework_output_and_calculate_f_score(path_search):
     return f_scores_complete
 
 
-def get_prom_f_scores_dataset1():
+def get_prom_f_scores_dataset1(real_drifts_dataset1, et):
+    print(f'Calculating f-score for ProM Concept Drift - dataset1')
     f_scores_ds1 = []
     detected_drifts = [360]
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('cb5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('cb5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = []
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('cd5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('cd5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [510, 995, 1508, 1998, 2498, 2996, 3498, 3998, 4486]
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('cf5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('cf5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [493]
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('cm5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('cm5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [519, 1000, 1506, 1996, 2493, 2931, 3501, 3997, 4504]
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('cp5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('cp5k', detected_drifts, real_drifts_dataset1, et))
     # detected_drifts = []
-    # f_scores = f_scores + calculate_prom_f_score('fr5k', detected_drifts, real_drifts_dataset1, et)
+    # f_scores = f_scores_ds1.append(calculate_prom_f_score('fr5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = []
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('IOR5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('IOR5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [3499]
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('IRO5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('IRO5k', detected_drifts, real_drifts_dataset1, et))
     # detected_drifts = []
-    # f_scores = f_scores + calculate_prom_f_score('lp2.5k', detected_drifts, real_drifts_dataset1, et)
+    # f_scores = f_scores_ds1.append(calculate_prom_f_score('lp2.5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [506, 999, 1509, 1997, 2502, 2999, 3487, 3999, 4498]
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('OIR5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('OIR5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [508, 995, 1521, 1951, 2495, 2990, 3509, 3978, 4501]
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('ORI5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('ORI5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = []
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('pl5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('pl5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [360]
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('pm5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('pm5k', detected_drifts, real_drifts_dataset1, et))
     # detected_drifts = []
-    # f_scores = f_scores + calculate_prom_f_score('re2.5k', detected_drifts, real_drifts_dataset1, et)
+    # f_scores = f_scores_ds1.append(calculate_prom_f_score('re2.5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = []
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('RIO5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('RIO5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = []
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('ROI5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('ROI5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = []
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('rp5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('rp5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = []
-    f_scores_ds1 = f_scores_ds1 + calculate_prom_f_score('sw5k', detected_drifts, real_drifts_dataset1, et)
+    f_scores_ds1.append(calculate_prom_f_score('sw5k', detected_drifts, real_drifts_dataset1, et))
     return f_scores_ds1
 
 
-def get_prom_f_scores_dataset2():
+def get_prom_f_scores_dataset2(real_drifts_dataset2, et):
+    print(f'Calculating f-score for ProM Concept Drift - dataset2')
     f_scores_ds2 = []
     detected_drifts = [464]
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_cb', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_cb', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = [532]
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_cd', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_cd', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = [398]
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_cf', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_cf', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = [449]
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_cp', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_cp', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = []
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_IOR', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_IOR', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = [352]
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_IRO', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_IRO', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = [535]
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_lp', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_lp', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = [468]
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_OIR', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_OIR', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = []
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_pl', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_pl', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = [509]
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_pm', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_pm', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = [484]
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_re', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_re', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = [555]
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_RIO', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_RIO', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = [532]
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_ROI', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_ROI', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = []
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_rp', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_rp', detected_drifts,
+                                                         real_drifts_dataset2, et))
     detected_drifts = []
-    f_scores_ds2 = f_scores_ds2 + calculate_prom_f_score('sudden_trace_noise0_1000_sw', detected_drifts,
-                                                         real_drifts_dataset1,
-                                                         et)
+    f_scores_ds2.append(calculate_prom_f_score('sudden_trace_noise0_1000_sw', detected_drifts,
+                                                         real_drifts_dataset2, et))
     return f_scores_ds2
 
 
@@ -482,11 +450,11 @@ if __name__ == '__main__':
     # Dataset 1
     real_drifts_dataset1 = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
     et = 100
-    f_scores = f_scores + get_prom_f_scores_dataset1()
+    f_scores = f_scores + get_prom_f_scores_dataset1(real_drifts_dataset1, et)
     # Dataset 2
     real_drifts_dataset2 = [500]
     et = 100
-    f_scores = f_scores + get_prom_f_scores_dataset2()
+    f_scores = f_scores + get_prom_f_scores_dataset2(real_drifts_dataset2, et)
 
     # convert to dataframe
     df = pd.DataFrame(f_scores)
