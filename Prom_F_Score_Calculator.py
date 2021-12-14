@@ -53,4 +53,5 @@ def ProM_F_score_calculation(drifts_detected=[], real_drifts=[]):
     print(f'The F-score is: {F}')
 # the first parameter we have to input is a list whit the drifts detected by the framework
 #and the second is the real drift localization
-ProM_F_score_calculation([],[400])
+f=ProM_F_score_calculation([1],[400])
+print(f)
