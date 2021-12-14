@@ -6,9 +6,11 @@ import os
 # This is one of the most important function of the program,
 # it uses the TP, FP, FN for
 # calculating the F-score
-def calculate_f_score(detected_drifts_list, win_size, real_drifts):
+def calculate_f_score(detected_drifts_list, win_size, real_drifts, error_tolerance=None):
     real_drifts_cp = real_drifts.copy()
-    error_tolerance = int(win_size)
+    # if the error tolerance is not defined use the window size
+    if not error_tolerance:
+        error_tolerance = int(win_size)
     number_of_real_drifts = len(real_drifts_cp)
     real_drifts_cp.sort()
     tp_list = []
@@ -267,7 +269,12 @@ def find_detected_drifts_calcule_f_score_apromore(f, approach, window_size, real
                 drift.append(int(splitline[6]))
             elif approach == 'event':
                 drift.append(int(splitline[5]))
-    f_score = calculate_f_score(drift, window_size, real_drifts)
+    f_score = 0
+    if windowing_type == 'adaptive':
+        # using 100 as error tolerance when evaluating adaptive approaches
+        f_score = calculate_f_score(drift, window_size, real_drifts, 100)
+    else:
+        f_score = calculate_f_score(drift, window_size, real_drifts)
     if len(real_drifts) == 9:
         dataset = 1
     else:
@@ -323,8 +330,6 @@ def read_framework_output_and_calculate_f_score(path_search):
 
 
 if __name__ == '__main__':
-    # df = pd.DataFrame()
-
     # Path to the files containing the output of the selected tools
     # The path_vdd_sudden_dataset1 and path_vdd_sudden_dataset2 points to the folders where the .txt files outputted
     # by VDD should be placed
@@ -347,6 +352,8 @@ if __name__ == '__main__':
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset2)
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset1)
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset2)
+
+
     df = pd.DataFrame(f_scores)
 
     # print(df)
