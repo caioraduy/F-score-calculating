@@ -1,6 +1,0 @@
-cd5k.mxml
-runs
-Initial window size = 150
-Window type = FWIN
-*********************************************
-
