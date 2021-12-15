@@ -346,13 +346,13 @@ def get_prom_f_scores_dataset1(real_drifts_dataset1, et):
     detected_drifts = [519, 1000, 1506, 1996, 2493, 2931, 3501, 3997, 4504]
     f_scores_ds1.append(calculate_prom_f_score('cp5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = []
-    f_scores = f_scores_ds1.append(calculate_prom_f_score('fr5k', detected_drifts, real_drifts_dataset1, et))
+    f_scores_ds1.append(calculate_prom_f_score('fr5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = []
     f_scores_ds1.append(calculate_prom_f_score('IOR5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [3499]
     f_scores_ds1.append(calculate_prom_f_score('IRO5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [502]
-    f_scores = f_scores_ds1.append(calculate_prom_f_score('lp2.5k', detected_drifts, real_drifts_dataset1, et))
+    f_scores_ds1.append(calculate_prom_f_score('lp2.5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [506, 999, 1509, 1997, 2502, 2999, 3487, 3999, 4498]
     f_scores_ds1.append(calculate_prom_f_score('OIR5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [508, 995, 1521, 1951, 2495, 2990, 3509, 3978, 4501]
@@ -361,8 +361,8 @@ def get_prom_f_scores_dataset1(real_drifts_dataset1, et):
     f_scores_ds1.append(calculate_prom_f_score('pl5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = [360]
     f_scores_ds1.append(calculate_prom_f_score('pm5k', detected_drifts, real_drifts_dataset1, et))
-    detected_drifts = [502,1006,1505,1998,2501,3000,3499,3999,4499]
-    f_scores = f_scores_ds1.append(calculate_prom_f_score('re2.5k', detected_drifts, real_drifts_dataset1, et))
+    detected_drifts = [502, 1006, 1505, 1998, 2501, 3000, 3499, 3999, 4499]
+    f_scores_ds1.append(calculate_prom_f_score('re2.5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = []
     f_scores_ds1.append(calculate_prom_f_score('RIO5k', detected_drifts, real_drifts_dataset1, et))
     detected_drifts = []
