@@ -50,7 +50,7 @@ For VDD and Apromore ProDrift the files must follow the rules described bellow:
     
     - data/output_apromore_dataset2 -> experiments results from Apromore ProDrift plugin with logs of data_1000
     
-    - data/output_vdd_dataset1 and data/output_vdd_dataset2 -> folders to insert the results from VDD system. Because the files are too big, they should be downloaded from Kaggle (https://www.kaggle.com/caioraduy/output-off-vdd-experiments)
+    - data/output_vdd_dataset1 and data/output_vdd_dataset2 -> folders to insert the results from VDD system. Because the files are too big, they should be downloaded from Kaggle (https://www.kaggle.com/caioraduy/output-vdd-dataset1-and-dataset2)
 	
 	- data/output_ProM_dataset1 and data/output_ProM_dataset2 contains the plots from the performed experiments using ProM Concept Drift plugin. By the time we performed the experiments we only can execute the adaptive approach with local features. 
     
