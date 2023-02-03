@@ -109,6 +109,23 @@ def extracts_information_from_dataset2_VDD_file(file_name):
 
     return tool, log_name, approach, windowing_type, windows_size, win_step
 
+def extracts_information_from_dataset1_IPDD_file(file_name):
+    print(f'Get information from IPDD framework: {file_name}')
+    file_name_being_analyzed = file_name
+    splitline = file_name_being_analyzed.split('_')
+    log_name = splitline[1]
+    approach = 'Trace'
+    windows_size = splitline[3]
+    windows_size = windows_size[2:]
+
+    windowing_type = splitline[3]
+    windowing_type = windowing_type[0:-3]
+
+    tool = 'IPDD'
+    return log_name, approach, approach, windows_size, windowing_type
+
+
+
 
 # this function extracts information of the archives .txt for the event logs
 # with 9 drift and 5000 traces for Apromore
@@ -243,6 +260,43 @@ def find_detected_drift_and_calculate_f_score_vdd(f, approach,
             found = True
     return new_line
 
+def find_detected_drift_and_f_score_IPDD(f, approach,real_drifts,
+                                                  window_size, tool, log_name, windowing_type,
+                                                ):
+    search_in_IPDD_console_detected_drifts = 'detected drifts'
+    drift = []
+    found = False
+    real_drift_list = real_drifts
+    window_with_drift = []
+    new_line = None
+    for line in f:
+        print(line)
+        if found:
+            print(print)
+        if search_in_IPDD_console_detected_drifts in line:
+            print(line)
+            found = True
+            splitline = line.split('detected drifts')
+            # LISTA DE DRIFTS REAIS
+            real_drift = splitline[0].split('[')
+            real_drift = real_drift[1].split(']')
+            real_drift = real_drift[0].split(',')
+
+            for i in range(0, len(real_drift)):
+                real_drift[i] = int(real_drift[i])
+            print(real_drift)
+            #LISTA DE DRIFTS DETECTADOS
+            detected_drift = splitline[1].split('detected drifts')
+            detected_drift = detected_drift[0].split('[')
+            detected_drift = detected_drift[1].split(']')
+            detected_drift = detected_drift[0].split(',')
+            for i in range(0, len(detected_drift)):
+                detected_drift[i] = int(detected_drift[i])
+            print(detected_drift)
+
+
+
+    return new_line
 
 # finds the detected drifts and calculates de f-score for the tool Apromore ProDrift plugin
 def find_detected_drifts_calcule_f_score_apromore(f, approach, window_size, real_drifts,
@@ -309,6 +363,10 @@ def read_framework_output_and_calculate_f_score(path_search):
                 elif 'vdd' in file:
                     tool, log_name, approach, windowing_type, window_size, win_step \
                         = extracts_information_from_dataset1_VDD_file(file)
+                elif 'IPDD' in file:
+                    tool, log_name, approach, windowing_type, window_size \
+                        = extracts_information_from_dataset1_IPDD_file(file)
+
                 real_drifts = finds_real_drifts_dataset1(approach, file)
             elif '1000' in file:
                 if 'apromore' in file:
@@ -329,6 +387,10 @@ def read_framework_output_and_calculate_f_score(path_search):
                                                                                            real_drifts, tool,
                                                                                            log_name, windowing_type,
                                                                                            win_step))
+                elif 'IPDD' in file:
+                    f_scores_complete.append(find_detected_drift_and_f_score_IPDD(f, approach, real_drifts, window_size, tool
+                                                                                  , log_name, windowing_type))
+
     return f_scores_complete
 
 
@@ -435,6 +497,7 @@ if __name__ == '__main__':
     path_output_apromore_dataset2 = os.path.join('data', 'output_apromore_dataset2')
     path_vdd_sudden_dataset1 = os.path.join('data', 'output_vdd_dataset1')
     path_vdd_sudden_dataset2 = os.path.join('data', 'output_vdd_dataset2')
+    path_IPDD_sudden_dataset1 = os.path.join('data', 'output_IPDD_dataset1')
     vdd_match_string_change_points = 'x lines:'
 
     # path to the original event logs
@@ -447,6 +510,8 @@ if __name__ == '__main__':
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset2)
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset1)
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset2)
+    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset1)
+
     # for the ProM Concept Drift we have to manually input the detected drifts based on the
     # information from the plots
     # Dataset 1

@@ -1,0 +1,25 @@
+Pathname of script: C:\Users\raduy\PycharmProjects\InteractiveProcessDriftDetectionFW
+Initializing IPDD Framework: model type [dfg] - [command line interface]
+----------------------------------------------
+Configuration:
+----------------------------------------------
+Approach: FIXED
+Window size: 125
+Metrics: ['Nodes', 'Edges']
+Event log: C:\Logseventos\lp2.5k.xesOIR5k.xes
+Real drifts: [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
+----------------------------------------------
+Starting analyzing process drifts ...
+----- IPDD general parameters -----
+Logname: C:\Logseventos\lp2.5k.xesOIR5k.xes
+Approach: FIXED
+Read log as: TRACE
+Similarity metrics: [<Metric.NODES: 'Nodes'>, <Metric.EDGES: 'Edges'>]
+----- IPDD fixed window for control-flow drifts - parameters -----
+Read log as: UNITY
+Window size: 125
+Copying event log to input_folder: data\input\script\lp2.5k.xesOIR5k.xes
+Error occurred while copying file. [Errno 2] No such file or directory: 'C:\\Logseventos\\lp2.5k.xesOIR5k.xes'
+Finished mining calculation
+Finished metrics calculation
+IPDD finished drift analysis
