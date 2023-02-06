@@ -115,14 +115,16 @@ def extracts_information_from_dataset1_IPDD_file(file_name):
     splitline = file_name_being_analyzed.split('_')
     log_name = splitline[1]
     approach = 'Trace'
-    windows_size = splitline[3]
+    windows_size = splitline[2]
+    print(windows_size)
     windows_size = windows_size[2:]
 
     windowing_type = splitline[3]
-    windowing_type = windowing_type[0:-3]
+    windowing_type = windowing_type[0:-4]
+    print(windowing_type)
 
     tool = 'IPDD'
-    return log_name, approach, approach, windows_size, windowing_type
+    return tool, log_name, approach, windowing_type, windows_size
 
 
 
@@ -260,21 +262,20 @@ def find_detected_drift_and_calculate_f_score_vdd(f, approach,
             found = True
     return new_line
 
-def find_detected_drift_and_f_score_IPDD(f, approach,real_drifts,
-                                                  window_size, tool, log_name, windowing_type,
+def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_type, windows_size
                                                 ):
     search_in_IPDD_console_detected_drifts = 'detected drifts'
     drift = []
     found = False
-    real_drift_list = real_drifts
     window_with_drift = []
     new_line = None
+
     for line in f:
-        print(line)
+        #print(line)
         if found:
-            print(print)
+            break
         if search_in_IPDD_console_detected_drifts in line:
-            print(line)
+            #print(line)
             found = True
             splitline = line.split('detected drifts')
             # LISTA DE DRIFTS REAIS
@@ -284,7 +285,7 @@ def find_detected_drift_and_f_score_IPDD(f, approach,real_drifts,
 
             for i in range(0, len(real_drift)):
                 real_drift[i] = int(real_drift[i])
-            print(real_drift)
+            #print(real_drift)
             #LISTA DE DRIFTS DETECTADOS
             detected_drift = splitline[1].split('detected drifts')
             detected_drift = detected_drift[0].split('[')
@@ -292,7 +293,26 @@ def find_detected_drift_and_f_score_IPDD(f, approach,real_drifts,
             detected_drift = detected_drift[0].split(',')
             for i in range(0, len(detected_drift)):
                 detected_drift[i] = int(detected_drift[i])
-            print(detected_drift)
+
+
+
+            f_score = calculate_f_score(detected_drift, real_drift, 100)
+
+            if len(real_drift) == 9:
+                dataset = 1
+            else:
+                dataset = 2
+
+            new_line = {'Tool': tool,
+                        'Dataset': dataset,
+                        'Event Log Name': log_name,
+                        'Approach': windowing_type,
+                        "Window's size": windows_size,
+                        'F-score': f_score,
+                        'Real drifts': real_drift,
+                        'Detected drifts': detected_drift}
+
+
 
 
 
@@ -388,8 +408,8 @@ def read_framework_output_and_calculate_f_score(path_search):
                                                                                            log_name, windowing_type,
                                                                                            win_step))
                 elif 'IPDD' in file:
-                    f_scores_complete.append(find_detected_drift_and_f_score_IPDD(f, approach, real_drifts, window_size, tool
-                                                                                  , log_name, windowing_type))
+                    f_scores_complete.append(find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach,
+                                                                                  windowing_type, window_size))
 
     return f_scores_complete
 
@@ -510,7 +530,7 @@ if __name__ == '__main__':
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset2)
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset1)
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset2)
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset1)
+
 
     # for the ProM Concept Drift we have to manually input the detected drifts based on the
     # information from the plots
@@ -522,6 +542,8 @@ if __name__ == '__main__':
     real_drifts_dataset2 = [500]
     et = 100
     f_scores = f_scores + get_prom_f_scores_dataset2(real_drifts_dataset2, et)
+    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset1)
+    print(f_scores)
 
     # convert to dataframe
     df = pd.DataFrame(f_scores)
