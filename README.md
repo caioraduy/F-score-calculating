@@ -36,7 +36,13 @@ For VDD and Apromore ProDrift the files must follow the rules described bellow:
 		[winsize] = 50
 		[approach] = adaptive
 		file name:log_sudden_trace_noise0_1000_cb_trace_ws50_adaptive_apromore.txt
-                        
+1.3 IPDD:
+     Dataset 1) IPDD_[log_name]_ws[winsize]_[approach].txt (Trace by trace)
+     example:
+     		[log_name] = cb5k
+		[winsize] = 50 
+                [approach] = fixed 
+                file name: IPDD_cb5k_ws50_fixed.txt
            
 3. data: This folder contains the data from the performed scenarios
 
