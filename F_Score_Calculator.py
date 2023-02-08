@@ -1,5 +1,3 @@
-
-
 import pm4py
 import pandas as pd
 import os
@@ -121,9 +119,10 @@ def extracts_information_from_dataset1_IPDD_file(file_name):
 
     windowing_type = splitline[3]
     windowing_type = windowing_type[0:-4]
-    print(windowing_type)
+    #print(windowing_type)
 
     tool = 'IPDD'
+    print(log_name)
     return tool, log_name, approach, windowing_type, windows_size
 
 
@@ -408,6 +407,7 @@ def read_framework_output_and_calculate_f_score(path_search):
                                                                                            log_name, windowing_type,
                                                                                            win_step))
                 elif 'IPDD' in file:
+                    print(f)
                     f_scores_complete.append(find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach,
                                                                                   windowing_type, window_size))
 
@@ -532,6 +532,8 @@ if __name__ == '__main__':
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset2)
 
 
+
+
     # for the ProM Concept Drift we have to manually input the detected drifts based on the
     # information from the plots
     # Dataset 1
@@ -543,7 +545,13 @@ if __name__ == '__main__':
     et = 100
     f_scores = f_scores + get_prom_f_scores_dataset2(real_drifts_dataset2, et)
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset1)
-    print(f_scores)
+    #print(f_scores)
+    #for i in f_scores:
+        #print(i)
+        #for j in i:
+            #if j == None:
+                #print(i)
+                #print(j)
 
     # convert to dataframe
     df = pd.DataFrame(f_scores)
