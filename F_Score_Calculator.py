@@ -108,21 +108,24 @@ def extracts_information_from_dataset2_VDD_file(file_name):
     return tool, log_name, approach, windowing_type, windows_size, win_step
 
 def extracts_information_from_dataset1_IPDD_file(file_name):
-    print(f'Get information from IPDD framework: {file_name}')
+    #print(f'Get information from IPDD framework: {file_name}')
     file_name_being_analyzed = file_name
     splitline = file_name_being_analyzed.split('_')
     log_name = splitline[1]
     approach = 'Trace'
     windows_size = splitline[2]
-    print(windows_size)
+    #print(windows_size)
     windows_size = windows_size[2:]
+    windows_size = int(windows_size)
 
     windowing_type = splitline[3]
     windowing_type = windowing_type[0:-4]
     #print(windowing_type)
+    if windowing_type == None:
+        print(file_name)
 
     tool = 'IPDD'
-    print(log_name)
+    #print(log_name)
     return tool, log_name, approach, windowing_type, windows_size
 
 
@@ -310,6 +313,8 @@ def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_
                         'F-score': f_score,
                         'Real drifts': real_drift,
                         'Detected drifts': detected_drift}
+            if new_line == None:
+                print(f)
 
 
 
@@ -407,9 +412,12 @@ def read_framework_output_and_calculate_f_score(path_search):
                                                                                            log_name, windowing_type,
                                                                                            win_step))
                 elif 'IPDD' in file:
-                    print(f)
                     f_scores_complete.append(find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach,
                                                                                   windowing_type, window_size))
+                    if find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach,
+                                                                                  windowing_type, window_size) ==None:
+                        print('---ARQUIVO COM ERRO---')
+                        print(f)
 
     return f_scores_complete
 
@@ -517,7 +525,7 @@ if __name__ == '__main__':
     path_output_apromore_dataset2 = os.path.join('data', 'output_apromore_dataset2')
     path_vdd_sudden_dataset1 = os.path.join('data', 'output_vdd_dataset1')
     path_vdd_sudden_dataset2 = os.path.join('data', 'output_vdd_dataset2')
-    path_IPDD_sudden_dataset1 = os.path.join('data', 'output_IPDD_dataset1')
+    path_IPDD_sudden_dataset1 = os.path.join('data', 'output_IPDD_dataset1_old')
     vdd_match_string_change_points = 'x lines:'
 
     # path to the original event logs
@@ -552,7 +560,10 @@ if __name__ == '__main__':
             #if j == None:
                 #print(i)
                 #print(j)
+    #print(f_scores)
+    #for i in f_scores:
 
+        #print(i)
     # convert to dataframe
     df = pd.DataFrame(f_scores)
     output_path = os.path.join('data', 'outputdata')

@@ -1,0 +1,558 @@
+Pathname of script: C:\Users\raduy\PycharmProjects\InteractiveProcessDriftDetectionFW
+Initializing IPDD Framework: model type [dfg] - [command line interface]
+----------------------------------------------
+Configuration:
+----------------------------------------------
+Approach: FIXED
+Window size: 75
+Metrics: ['Nodes', 'Edges']
+Event log: C:\Logseventos\RIO5k.xes
+Real drifts: [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
+----------------------------------------------
+Starting analyzing process drifts ...
+----- IPDD general parameters -----
+Logname: C:\Logseventos\RIO5k.xes
+Approach: FIXED
+Read log as: TRACE
+Similarity metrics: [<Metric.NODES: 'Nodes'>, <Metric.EDGES: 'Edges'>]
+----- IPDD fixed window for control-flow drifts - parameters -----
+Read log as: UNITY
+Window size: 75
+Copying event log to input_folder: data\input\script\RIO5k.xes
+Event log successfully copied data\input\script\RIO5k.xes
+Importing event log: RIO5k.xes
+Log [RIO5k.xes] - total of cases [5000] - median case duration [17.769713888896835hrs]
+Creating evaluation path data\output\script\evaluation\RIO5k.xes\FIXED_win75
+User selected approach=FIXED reading log as=TRACE
+Metrics=[<Metric.NODES: 'Nodes'>, <Metric.EDGES: 'Edges'>]
+Starting windowing process...
+**************************************************************************
+*************** Similarity metrics calculation started *******************
+**************************************************************************
+Generating model for sub-log [0 - 74] - window [0]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w1.gv
+Generating model for sub-log [75 - 149] - window [1]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w2.gv
+**************************************************************************
+Starting monitoring thread for similarity metrics calculation
+calculate_metrics - current window 2 - initial_trace = 75**************************************************************************
+
+Starting [Nodes] calculation between windows [1-2]
+check_finish - final_window 0 - metrics_count 1 - total de metricas 2
+Starting [Edges] calculation between windows [1-2]
+Generating model for sub-log [150 - 224] - window [2]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w3.gv
+Saving [Edges] comparing windows [1-2]
+check_finish - final_window 0 - metrics_count 2 - total de metricas 2
+calculate_metrics - current window 3 - initial_trace = 150
+Starting [Nodes] calculation between windows [2-3]
+check_finish - final_window 0 - metrics_count 3 - total de metricas 2Starting [Edges] calculation between windows [2-3]
+
+check_finish - final_window 0 - metrics_count 4 - total de metricas 2Generating model for sub-log [225 - 299] - window [3]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w4.gv
+calculate_metrics - current window 4 - initial_trace = 225
+Starting [Nodes] calculation between windows [3-4]
+check_finish - final_window 0 - metrics_count 5 - total de metricas 2
+Starting [Edges] calculation between windows [3-4]
+Generating model for sub-log [300 - 374] - window [4]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w5.gv
+Saving [Edges] comparing windows [3-4]
+check_finish - final_window 0 - metrics_count 6 - total de metricas 2
+calculate_metrics - current window 5 - initial_trace = 300
+Starting [Nodes] calculation between windows [4-5]
+check_finish - final_window 0 - metrics_count 7 - total de metricas 2Starting [Edges] calculation between windows [4-5]
+
+check_finish - final_window 0 - metrics_count 8 - total de metricas 2
+Generating model for sub-log [375 - 449] - window [5]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w6.gv
+calculate_metrics - current window 6 - initial_trace = 375
+Starting [Nodes] calculation between windows [5-6]
+check_finish - final_window 0 - metrics_count 9 - total de metricas 2
+Starting [Edges] calculation between windows [5-6]
+check_finish - final_window 0 - metrics_count 10 - total de metricas 2
+Generating model for sub-log [450 - 524] - window [6]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w7.gv
+calculate_metrics - current window 7 - initial_trace = 450
+Starting [Nodes] calculation between windows [6-7]
+check_finish - final_window 0 - metrics_count 11 - total de metricas 2
+Starting [Edges] calculation between windows [6-7]
+Generating model for sub-log [525 - 599] - window [7]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w8.gv
+Saving [Edges] comparing windows [6-7]
+check_finish - final_window 0 - metrics_count 12 - total de metricas 2
+calculate_metrics - current window 8 - initial_trace = 525
+Starting [Nodes] calculation between windows [7-8]
+check_finish - final_window 0 - metrics_count 13 - total de metricas 2
+Starting [Edges] calculation between windows [7-8]
+Generating model for sub-log [600 - 674] - window [8]
+Saving [Edges] comparing windows [7-8]Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w9.gv
+
+check_finish - final_window 0 - metrics_count 14 - total de metricas 2
+calculate_metrics - current window 9 - initial_trace = 600
+Starting [Nodes] calculation between windows [8-9]
+check_finish - final_window 0 - metrics_count 15 - total de metricas 2
+Starting [Edges] calculation between windows [8-9]
+Generating model for sub-log [675 - 749] - window [9]
+Saving [Edges] comparing windows [8-9]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w10.gv
+check_finish - final_window 0 - metrics_count 16 - total de metricas 2
+calculate_metrics - current window 10 - initial_trace = 675
+Starting [Nodes] calculation between windows [9-10]
+check_finish - final_window 0 - metrics_count 17 - total de metricas 2
+Starting [Edges] calculation between windows [9-10]
+Generating model for sub-log [750 - 824] - window [10]Saving [Edges] comparing windows [9-10]
+
+check_finish - final_window 0 - metrics_count 18 - total de metricas 2
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w11.gv
+calculate_metrics - current window 11 - initial_trace = 750
+Starting [Nodes] calculation between windows [10-11]
+check_finish - final_window 0 - metrics_count 19 - total de metricas 2Starting [Edges] calculation between windows [10-11]
+
+Generating model for sub-log [825 - 899] - window [11]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w12.gvSaving [Edges] comparing windows [10-11]
+
+check_finish - final_window 0 - metrics_count 20 - total de metricas 2
+calculate_metrics - current window 12 - initial_trace = 825
+Starting [Nodes] calculation between windows [11-12]
+check_finish - final_window 0 - metrics_count 21 - total de metricas 2
+Starting [Edges] calculation between windows [11-12]
+check_finish - final_window 0 - metrics_count 22 - total de metricas 2Generating model for sub-log [900 - 974] - window [12]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w13.gv
+calculate_metrics - current window 13 - initial_trace = 900
+Starting [Nodes] calculation between windows [12-13]
+check_finish - final_window 0 - metrics_count 23 - total de metricas 2Starting [Edges] calculation between windows [12-13]
+
+Generating model for sub-log [975 - 1049] - window [13]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w14.gv
+Saving [Edges] comparing windows [12-13]
+check_finish - final_window 0 - metrics_count 24 - total de metricas 2
+calculate_metrics - current window 14 - initial_trace = 975
+Starting [Nodes] calculation between windows [13-14]
+check_finish - final_window 0 - metrics_count 25 - total de metricas 2Starting [Edges] calculation between windows [13-14]
+
+Generating model for sub-log [1050 - 1124] - window [14]
+Saving [Edges] comparing windows [13-14]Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w15.gv
+
+check_finish - final_window 0 - metrics_count 26 - total de metricas 2
+calculate_metrics - current window 15 - initial_trace = 1050
+Starting [Nodes] calculation between windows [14-15]
+check_finish - final_window 0 - metrics_count 27 - total de metricas 2Starting [Edges] calculation between windows [14-15]
+
+check_finish - final_window 0 - metrics_count 28 - total de metricas 2
+Generating model for sub-log [1125 - 1199] - window [15]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w16.gv
+calculate_metrics - current window 16 - initial_trace = 1125
+Starting [Nodes] calculation between windows [15-16]
+check_finish - final_window 0 - metrics_count 29 - total de metricas 2Starting [Edges] calculation between windows [15-16]
+
+Generating model for sub-log [1200 - 1274] - window [16]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w17.gvSaving [Edges] comparing windows [15-16]
+
+check_finish - final_window 0 - metrics_count 30 - total de metricas 2
+calculate_metrics - current window 17 - initial_trace = 1200
+Starting [Nodes] calculation between windows [16-17]
+check_finish - final_window 0 - metrics_count 31 - total de metricas 2
+Starting [Edges] calculation between windows [16-17]
+Generating model for sub-log [1275 - 1349] - window [17]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w18.gv
+Saving [Edges] comparing windows [16-17]
+check_finish - final_window 0 - metrics_count 32 - total de metricas 2
+calculate_metrics - current window 18 - initial_trace = 1275
+Starting [Nodes] calculation between windows [17-18]
+check_finish - final_window 0 - metrics_count 33 - total de metricas 2
+Starting [Edges] calculation between windows [17-18]
+Generating model for sub-log [1350 - 1424] - window [18]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w19.gv
+Saving [Edges] comparing windows [17-18]
+check_finish - final_window 0 - metrics_count 34 - total de metricas 2
+calculate_metrics - current window 19 - initial_trace = 1350
+Starting [Nodes] calculation between windows [18-19]
+check_finish - final_window 0 - metrics_count 35 - total de metricas 2Starting [Edges] calculation between windows [18-19]
+
+check_finish - final_window 0 - metrics_count 36 - total de metricas 2
+Generating model for sub-log [1425 - 1499] - window [19]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w20.gv
+calculate_metrics - current window 20 - initial_trace = 1425
+Starting [Nodes] calculation between windows [19-20]
+check_finish - final_window 0 - metrics_count 37 - total de metricas 2
+Starting [Edges] calculation between windows [19-20]
+check_finish - final_window 0 - metrics_count 38 - total de metricas 2Generating model for sub-log [1500 - 1574] - window [20]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w21.gv
+calculate_metrics - current window 21 - initial_trace = 1500
+Starting [Nodes] calculation between windows [20-21]
+check_finish - final_window 0 - metrics_count 39 - total de metricas 2Starting [Edges] calculation between windows [20-21]
+
+check_finish - final_window 0 - metrics_count 40 - total de metricas 2Generating model for sub-log [1575 - 1649] - window [21]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w22.gv
+calculate_metrics - current window 22 - initial_trace = 1575
+Starting [Nodes] calculation between windows [21-22]
+check_finish - final_window 0 - metrics_count 41 - total de metricas 2
+Starting [Edges] calculation between windows [21-22]
+check_finish - final_window 0 - metrics_count 42 - total de metricas 2
+Generating model for sub-log [1650 - 1724] - window [22]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w23.gv
+calculate_metrics - current window 23 - initial_trace = 1650
+Starting [Nodes] calculation between windows [22-23]
+check_finish - final_window 0 - metrics_count 43 - total de metricas 2
+Starting [Edges] calculation between windows [22-23]
+check_finish - final_window 0 - metrics_count 44 - total de metricas 2Generating model for sub-log [1725 - 1799] - window [23]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w24.gv
+calculate_metrics - current window 24 - initial_trace = 1725
+Starting [Nodes] calculation between windows [23-24]
+check_finish - final_window 0 - metrics_count 45 - total de metricas 2Starting [Edges] calculation between windows [23-24]
+
+Generating model for sub-log [1800 - 1874] - window [24]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w25.gv
+Saving [Edges] comparing windows [23-24]
+check_finish - final_window 0 - metrics_count 46 - total de metricas 2
+calculate_metrics - current window 25 - initial_trace = 1800
+Starting [Nodes] calculation between windows [24-25]
+check_finish - final_window 0 - metrics_count 47 - total de metricas 2Starting [Edges] calculation between windows [24-25]
+
+Generating model for sub-log [1875 - 1949] - window [25]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w26.gvSaving [Edges] comparing windows [24-25]
+
+check_finish - final_window 0 - metrics_count 48 - total de metricas 2
+calculate_metrics - current window 26 - initial_trace = 1875
+Starting [Nodes] calculation between windows [25-26]
+check_finish - final_window 0 - metrics_count 49 - total de metricas 2
+Starting [Edges] calculation between windows [25-26]
+Generating model for sub-log [1950 - 2024] - window [26]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w27.gv
+Saving [Edges] comparing windows [25-26]
+check_finish - final_window 0 - metrics_count 50 - total de metricas 2
+calculate_metrics - current window 27 - initial_trace = 1950
+Starting [Nodes] calculation between windows [26-27]
+check_finish - final_window 0 - metrics_count 51 - total de metricas 2Starting [Edges] calculation between windows [26-27]
+
+Generating model for sub-log [2025 - 2099] - window [27]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w28.gvSaving [Edges] comparing windows [26-27]
+
+check_finish - final_window 0 - metrics_count 52 - total de metricas 2
+calculate_metrics - current window 28 - initial_trace = 2025
+Starting [Nodes] calculation between windows [27-28]
+check_finish - final_window 0 - metrics_count 53 - total de metricas 2
+Starting [Edges] calculation between windows [27-28]
+Generating model for sub-log [2100 - 2174] - window [28]
+Saving [Edges] comparing windows [27-28]Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w29.gv
+
+check_finish - final_window 0 - metrics_count 54 - total de metricas 2
+calculate_metrics - current window 29 - initial_trace = 2100
+Starting [Nodes] calculation between windows [28-29]
+check_finish - final_window 0 - metrics_count 55 - total de metricas 2
+Starting [Edges] calculation between windows [28-29]
+Generating model for sub-log [2175 - 2249] - window [29]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w30.gvSaving [Edges] comparing windows [28-29]
+
+check_finish - final_window 0 - metrics_count 56 - total de metricas 2
+calculate_metrics - current window 30 - initial_trace = 2175
+Starting [Nodes] calculation between windows [29-30]
+check_finish - final_window 0 - metrics_count 57 - total de metricas 2
+Starting [Edges] calculation between windows [29-30]
+check_finish - final_window 0 - metrics_count 58 - total de metricas 2
+Generating model for sub-log [2250 - 2324] - window [30]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w31.gv
+calculate_metrics - current window 31 - initial_trace = 2250
+Starting [Nodes] calculation between windows [30-31]
+check_finish - final_window 0 - metrics_count 59 - total de metricas 2
+Starting [Edges] calculation between windows [30-31]
+check_finish - final_window 0 - metrics_count 60 - total de metricas 2
+Generating model for sub-log [2325 - 2399] - window [31]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w32.gv
+calculate_metrics - current window 32 - initial_trace = 2325
+Starting [Nodes] calculation between windows [31-32]
+check_finish - final_window 0 - metrics_count 61 - total de metricas 2
+Starting [Edges] calculation between windows [31-32]
+Generating model for sub-log [2400 - 2474] - window [32]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w33.gvSaving [Edges] comparing windows [31-32]
+
+check_finish - final_window 0 - metrics_count 62 - total de metricas 2
+calculate_metrics - current window 33 - initial_trace = 2400
+Starting [Nodes] calculation between windows [32-33]
+check_finish - final_window 0 - metrics_count 63 - total de metricas 2Starting [Edges] calculation between windows [32-33]
+
+check_finish - final_window 0 - metrics_count 64 - total de metricas 2Generating model for sub-log [2475 - 2549] - window [33]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w34.gv
+calculate_metrics - current window 34 - initial_trace = 2475
+Starting [Nodes] calculation between windows [33-34]
+check_finish - final_window 0 - metrics_count 65 - total de metricas 2Starting [Edges] calculation between windows [33-34]
+
+check_finish - final_window 0 - metrics_count 66 - total de metricas 2
+Generating model for sub-log [2550 - 2624] - window [34]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w35.gv
+calculate_metrics - current window 35 - initial_trace = 2550
+Starting [Nodes] calculation between windows [34-35]
+check_finish - final_window 0 - metrics_count 67 - total de metricas 2Starting [Edges] calculation between windows [34-35]
+
+check_finish - final_window 0 - metrics_count 68 - total de metricas 2
+Generating model for sub-log [2625 - 2699] - window [35]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w36.gv
+calculate_metrics - current window 36 - initial_trace = 2625
+Starting [Nodes] calculation between windows [35-36]
+check_finish - final_window 0 - metrics_count 69 - total de metricas 2
+Starting [Edges] calculation between windows [35-36]
+check_finish - final_window 0 - metrics_count 70 - total de metricas 2
+Generating model for sub-log [2700 - 2774] - window [36]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w37.gv
+calculate_metrics - current window 37 - initial_trace = 2700
+Starting [Nodes] calculation between windows [36-37]
+check_finish - final_window 0 - metrics_count 71 - total de metricas 2Starting [Edges] calculation between windows [36-37]
+
+check_finish - final_window 0 - metrics_count 72 - total de metricas 2Generating model for sub-log [2775 - 2849] - window [37]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w38.gv
+calculate_metrics - current window 38 - initial_trace = 2775
+Starting [Nodes] calculation between windows [37-38]
+check_finish - final_window 0 - metrics_count 73 - total de metricas 2Starting [Edges] calculation between windows [37-38]
+
+Generating model for sub-log [2850 - 2924] - window [38]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w39.gv
+Saving [Edges] comparing windows [37-38]
+check_finish - final_window 0 - metrics_count 74 - total de metricas 2
+calculate_metrics - current window 39 - initial_trace = 2850
+Starting [Nodes] calculation between windows [38-39]
+check_finish - final_window 0 - metrics_count 75 - total de metricas 2
+Starting [Edges] calculation between windows [38-39]
+Generating model for sub-log [2925 - 2999] - window [39]
+Saving [Edges] comparing windows [38-39]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w40.gv
+check_finish - final_window 0 - metrics_count 76 - total de metricas 2
+calculate_metrics - current window 40 - initial_trace = 2925
+Starting [Nodes] calculation between windows [39-40]
+check_finish - final_window 0 - metrics_count 77 - total de metricas 2Starting [Edges] calculation between windows [39-40]
+
+check_finish - final_window 0 - metrics_count 78 - total de metricas 2
+Generating model for sub-log [3000 - 3074] - window [40]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w41.gv
+calculate_metrics - current window 41 - initial_trace = 3000
+Starting [Nodes] calculation between windows [40-41]
+check_finish - final_window 0 - metrics_count 79 - total de metricas 2Starting [Edges] calculation between windows [40-41]
+
+check_finish - final_window 0 - metrics_count 80 - total de metricas 2
+Generating model for sub-log [3075 - 3149] - window [41]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w42.gv
+calculate_metrics - current window 42 - initial_trace = 3075
+Starting [Nodes] calculation between windows [41-42]
+check_finish - final_window 0 - metrics_count 81 - total de metricas 2Starting [Edges] calculation between windows [41-42]
+
+check_finish - final_window 0 - metrics_count 82 - total de metricas 2Generating model for sub-log [3150 - 3224] - window [42]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w43.gv
+calculate_metrics - current window 43 - initial_trace = 3150
+Starting [Nodes] calculation between windows [42-43]
+check_finish - final_window 0 - metrics_count 83 - total de metricas 2Starting [Edges] calculation between windows [42-43]
+
+Generating model for sub-log [3225 - 3299] - window [43]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w44.gv
+Saving [Edges] comparing windows [42-43]
+check_finish - final_window 0 - metrics_count 84 - total de metricas 2
+calculate_metrics - current window 44 - initial_trace = 3225
+Starting [Nodes] calculation between windows [43-44]
+check_finish - final_window 0 - metrics_count 85 - total de metricas 2
+Starting [Edges] calculation between windows [43-44]
+Generating model for sub-log [3300 - 3374] - window [44]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w45.gv
+Saving [Edges] comparing windows [43-44]
+check_finish - final_window 0 - metrics_count 86 - total de metricas 2
+calculate_metrics - current window 45 - initial_trace = 3300
+Starting [Nodes] calculation between windows [44-45]
+check_finish - final_window 0 - metrics_count 87 - total de metricas 2
+Starting [Edges] calculation between windows [44-45]
+check_finish - final_window 0 - metrics_count 88 - total de metricas 2Generating model for sub-log [3375 - 3449] - window [45]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w46.gv
+calculate_metrics - current window 46 - initial_trace = 3375
+Starting [Nodes] calculation between windows [45-46]
+check_finish - final_window 0 - metrics_count 89 - total de metricas 2Starting [Edges] calculation between windows [45-46]
+
+Generating model for sub-log [3450 - 3524] - window [46]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w47.gv
+Saving [Edges] comparing windows [45-46]
+check_finish - final_window 0 - metrics_count 90 - total de metricas 2
+calculate_metrics - current window 47 - initial_trace = 3450
+Starting [Nodes] calculation between windows [46-47]
+check_finish - final_window 0 - metrics_count 91 - total de metricas 2Starting [Edges] calculation between windows [46-47]
+
+check_finish - final_window 0 - metrics_count 92 - total de metricas 2
+Generating model for sub-log [3525 - 3599] - window [47]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w48.gv
+calculate_metrics - current window 48 - initial_trace = 3525
+Starting [Nodes] calculation between windows [47-48]
+check_finish - final_window 0 - metrics_count 93 - total de metricas 2Starting [Edges] calculation between windows [47-48]
+
+Generating model for sub-log [3600 - 3674] - window [48]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w49.gv
+Saving [Edges] comparing windows [47-48]
+check_finish - final_window 0 - metrics_count 94 - total de metricas 2
+calculate_metrics - current window 49 - initial_trace = 3600
+Starting [Nodes] calculation between windows [48-49]
+check_finish - final_window 0 - metrics_count 95 - total de metricas 2
+Starting [Edges] calculation between windows [48-49]
+Generating model for sub-log [3675 - 3749] - window [49]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w50.gv
+Saving [Edges] comparing windows [48-49]
+check_finish - final_window 0 - metrics_count 96 - total de metricas 2
+calculate_metrics - current window 50 - initial_trace = 3675
+Starting [Nodes] calculation between windows [49-50]
+check_finish - final_window 0 - metrics_count 97 - total de metricas 2Starting [Edges] calculation between windows [49-50]
+
+Generating model for sub-log [3750 - 3824] - window [50]
+Saving [Edges] comparing windows [49-50]Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w51.gv
+
+check_finish - final_window 0 - metrics_count 98 - total de metricas 2
+calculate_metrics - current window 51 - initial_trace = 3750
+Starting [Nodes] calculation between windows [50-51]
+check_finish - final_window 0 - metrics_count 99 - total de metricas 2Starting [Edges] calculation between windows [50-51]
+
+Generating model for sub-log [3825 - 3899] - window [51]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w52.gv
+Saving [Edges] comparing windows [50-51]
+check_finish - final_window 0 - metrics_count 100 - total de metricas 2
+calculate_metrics - current window 52 - initial_trace = 3825
+Starting [Nodes] calculation between windows [51-52]
+check_finish - final_window 0 - metrics_count 101 - total de metricas 2Starting [Edges] calculation between windows [51-52]
+
+Generating model for sub-log [3900 - 3974] - window [52]
+Saving [Edges] comparing windows [51-52]Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w53.gv
+
+check_finish - final_window 0 - metrics_count 102 - total de metricas 2
+calculate_metrics - current window 53 - initial_trace = 3900
+Starting [Nodes] calculation between windows [52-53]
+check_finish - final_window 0 - metrics_count 103 - total de metricas 2
+Starting [Edges] calculation between windows [52-53]
+check_finish - final_window 0 - metrics_count 104 - total de metricas 2Generating model for sub-log [3975 - 4049] - window [53]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w54.gv
+calculate_metrics - current window 54 - initial_trace = 3975
+Starting [Nodes] calculation between windows [53-54]
+check_finish - final_window 0 - metrics_count 105 - total de metricas 2Starting [Edges] calculation between windows [53-54]
+
+Generating model for sub-log [4050 - 4124] - window [54]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w55.gv
+Saving [Edges] comparing windows [53-54]
+check_finish - final_window 0 - metrics_count 106 - total de metricas 2
+calculate_metrics - current window 55 - initial_trace = 4050
+Starting [Nodes] calculation between windows [54-55]
+check_finish - final_window 0 - metrics_count 107 - total de metricas 2
+Starting [Edges] calculation between windows [54-55]
+check_finish - final_window 0 - metrics_count 108 - total de metricas 2Generating model for sub-log [4125 - 4199] - window [55]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w56.gv
+calculate_metrics - current window 56 - initial_trace = 4125
+Starting [Nodes] calculation between windows [55-56]
+check_finish - final_window 0 - metrics_count 109 - total de metricas 2
+Starting [Edges] calculation between windows [55-56]
+check_finish - final_window 0 - metrics_count 110 - total de metricas 2
+Generating model for sub-log [4200 - 4274] - window [56]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w57.gv
+calculate_metrics - current window 57 - initial_trace = 4200
+Starting [Nodes] calculation between windows [56-57]
+check_finish - final_window 0 - metrics_count 111 - total de metricas 2Starting [Edges] calculation between windows [56-57]
+
+Generating model for sub-log [4275 - 4349] - window [57]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w58.gv
+Saving [Edges] comparing windows [56-57]
+check_finish - final_window 0 - metrics_count 112 - total de metricas 2
+calculate_metrics - current window 58 - initial_trace = 4275
+Starting [Nodes] calculation between windows [57-58]
+check_finish - final_window 0 - metrics_count 113 - total de metricas 2Starting [Edges] calculation between windows [57-58]
+
+Generating model for sub-log [4350 - 4424] - window [58]
+Saving [Edges] comparing windows [57-58]
+check_finish - final_window 0 - metrics_count 114 - total de metricas 2Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w59.gv
+
+calculate_metrics - current window 59 - initial_trace = 4350
+Starting [Nodes] calculation between windows [58-59]
+check_finish - final_window 0 - metrics_count 115 - total de metricas 2Starting [Edges] calculation between windows [58-59]
+
+Generating model for sub-log [4425 - 4499] - window [59]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w60.gvSaving [Edges] comparing windows [58-59]
+
+check_finish - final_window 0 - metrics_count 116 - total de metricas 2
+calculate_metrics - current window 60 - initial_trace = 4425
+Starting [Nodes] calculation between windows [59-60]
+check_finish - final_window 0 - metrics_count 117 - total de metricas 2Starting [Edges] calculation between windows [59-60]
+
+check_finish - final_window 0 - metrics_count 118 - total de metricas 2Generating model for sub-log [4500 - 4574] - window [60]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w61.gv
+calculate_metrics - current window 61 - initial_trace = 4500
+Starting [Nodes] calculation between windows [60-61]
+check_finish - final_window 0 - metrics_count 119 - total de metricas 2
+Starting [Edges] calculation between windows [60-61]
+check_finish - final_window 0 - metrics_count 120 - total de metricas 2Generating model for sub-log [4575 - 4649] - window [61]
+
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w62.gv
+calculate_metrics - current window 62 - initial_trace = 4575
+Starting [Nodes] calculation between windows [61-62]
+check_finish - final_window 0 - metrics_count 121 - total de metricas 2Starting [Edges] calculation between windows [61-62]
+
+check_finish - final_window 0 - metrics_count 122 - total de metricas 2
+Generating model for sub-log [4650 - 4724] - window [62]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w63.gv
+calculate_metrics - current window 63 - initial_trace = 4650
+Starting [Nodes] calculation between windows [62-63]
+check_finish - final_window 0 - metrics_count 123 - total de metricas 2Starting [Edges] calculation between windows [62-63]
+
+Generating model for sub-log [4725 - 4799] - window [63]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w64.gv
+Saving [Edges] comparing windows [62-63]
+check_finish - final_window 0 - metrics_count 124 - total de metricas 2
+calculate_metrics - current window 64 - initial_trace = 4725
+Starting [Nodes] calculation between windows [63-64]
+check_finish - final_window 0 - metrics_count 125 - total de metricas 2
+Starting [Edges] calculation between windows [63-64]
+Generating model for sub-log [4800 - 4874] - window [64]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w65.gv
+Saving [Edges] comparing windows [63-64]
+check_finish - final_window 0 - metrics_count 126 - total de metricas 2
+calculate_metrics - current window 65 - initial_trace = 4800
+Starting [Nodes] calculation between windows [64-65]
+check_finish - final_window 0 - metrics_count 127 - total de metricas 2Starting [Edges] calculation between windows [64-65]
+
+check_finish - final_window 0 - metrics_count 128 - total de metricas 2
+Generating model for sub-log [4875 - 4949] - window [65]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w66.gv
+calculate_metrics - current window 66 - initial_trace = 4875
+Starting [Nodes] calculation between windows [65-66]
+check_finish - final_window 0 - metrics_count 129 - total de metricas 2Starting [Edges] calculation between windows [65-66]
+
+check_finish - final_window 0 - metrics_count 130 - total de metricas 2Analyzing final window... size 50 window_count 66
+
+Setting final window value 66
+Generating model for sub-log [4950 - 4999] - window [66]
+Saving data\output\script\models\dfg\RIO5k.xes\FIXED_win_75 - dfg_w67.gv
+calculate_metrics - current window 67 - initial_trace = 4950
+Starting [Nodes] calculation between windows [66-67]
+check_finish - final_window 66 - metrics_count 131 - total de metricas 2Starting [Edges] calculation between windows [66-67]
+
+check_finish - final_window 66 - metrics_count 132 - total de metricas 2
+**************************************************************************Finished mining calculation
+
+
+
+***************************************************************************** Similarity metrics calculation finished for the file RIO5k.xes*** Initial indexes for generated windows: {0: 'b1_0', 75: 'b1_75', 150: 'b1_150', 225: 'b1_225', 300: 'b1_300', 375: 'b1_375', 450: 'b1_450', 525: 'rio1_25', 600: 'rio1_100', 675: 'rio1_175', 750: 'rio1_250', 825: 'rio1_325', 900: 'rio1_400', 975: 'rio1_475', 1050: 'b2_50', 1125: 'b2_125', 1200: 'b2_200', 1275: 'b2_275', 1350: 'b2_350', 1425: 'b2_425', 1500: 'rio2_0', 1575: 'rio2_75', 1650: 'rio2_150', 1725: 'rio2_225', 1800: 'rio2_300', 1875: 'rio2_375', 1950: 'rio2_450', 2025: 'b3_25', 2100: 'b3_100', 2175: 'b3_175', 2250: 'b3_250', 2325: 'b3_325', 2400: 'b3_400', 2475: 'b3_475', 2550: 'rio3_50', 2625: 'rio3_125', 2700: 'rio3_200', 2775: 'rio3_275', 2850: 'rio3_350', 2925: 'rio3_425', 3000: 'b4_0', 3075: 'b4_75', 3150: 'b4_150', 3225: 'b4_225', 3300: 'b4_300', 3375: 'b4_375', 3450: 'b4_450', 3525: 'rio4_25', 3600: 'rio4_100', 3675: 'rio4_175', 3750: 'rio4_250', 3825: 'rio4_325', 3900: 'rio4_400', 3975: 'rio4_475', 4050: 'b5_50', 4125: 'b5_125', 4200: 'b5_200', 4275: 'b5_275', 4350: 'b5_350', 4425: 'b5_425', 4500: 'rio5_0', 4575: 'rio5_75', 4650: 'rio5_150', 4725: 'rio5_225', 4800: 'rio5_300', 4875: 'rio5_375', 4950: 'rio5_450'}
+
+***************************************************************************** Number of windows: [67]
+
+Finished metrics calculation
+
+*** Similarity metrics calculation finished for the file RIO5k.xes**************************************************************************IPDD finished drift analysis
+
+**************************************************************************
+Finishing monitoring thread for metrics calculation
+
+Finished metrics calculation**************************************************************************
+
+Saving drift windows: data\output\script\similarity_metrics\dfg\RIO5k.xes\FIXED_win75_drift_windows.txt
+IPDD detect control-flow drift in windows [2, 4, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 24, 25, 26, 27, 28, 29, 32, 38, 39, 43, 44, 46, 48, 49, 50, 51, 52, 54, 57, 58, 59, 63, 64] - traces [75, 225, 450, 525, 600, 675, 750, 900, 975, 1125, 1200, 1275, 1725, 1800, 1875, 1950, 2025, 2100, 2325, 2775, 2850, 3150, 3225, 3375, 3525, 3600, 3675, 3750, 3825, 3975, 4200, 4275, 4350, 4650, 4725]
+Calculating metric real drifts [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500] - detected drifts [75, 225, 450, 525, 600, 675, 750, 900, 975, 1125, 1200, 1275, 1725, 1800, 1875, 1950, 2025, 2100, 2325, 2775, 2850, 3150, 3225, 3375, 3525, 3600, 3675, 3750, 3825, 3975, 4200, 4275, 4350, 4650, 4725] - total of traces 5000
+Saving evaluation metrics...
+IPDD F-score: {<EvaluationMetricList.F_SCORE: 'F-score'>: 0.40909090909090906, <EvaluationMetricList.FPR: 'False positive rate (FPR)'>: 0.005209376878381086, <EvaluationMetricList.MEAN_DELAY: 'Mean delay'>: 133.33333333333334}
+[0m
