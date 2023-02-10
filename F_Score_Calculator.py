@@ -114,6 +114,8 @@ def extracts_information_from_dataset1_IPDD_file(file_name):
     log_name = splitline[1]
     approach = 'Trace'
     windows_size = splitline[2]
+    if windows_size == None:
+        print("erro")
     #print(windows_size)
     windows_size = windows_size[2:]
     windows_size = int(windows_size)
@@ -267,18 +269,35 @@ def find_detected_drift_and_calculate_f_score_vdd(f, approach,
 def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_type, windows_size
                                                 ):
     search_in_IPDD_console_detected_drifts = 'detected drifts'
+    search_in_IPDD_console_detected_drifts_adaptive = 'Similarity metrics confirm the drifts in'
     drift = []
-    found = False
+    found_adaptive = False
+    found_fixed = False
+
+
     window_with_drift = []
     new_line = None
 
     for line in f:
-        #print(line)
-        if found:
-            break
-        if search_in_IPDD_console_detected_drifts in line:
-            #print(line)
-            found = True
+        if search_in_IPDD_console_detected_drifts_adaptive in line:
+            found_adaptive = True
+            detected_drift = line.split('[')
+            detected_drift = detected_drift[1].split(']')
+            detected_drift = detected_drift[0]
+            detected_drift = detected_drift.split(',')
+
+            for i in range(0, len(detected_drift)):
+                detected_drift[i] = int(detected_drift[i])
+            if '5k' or '2.5k' in log_name:
+                dataset = 1
+                real_drift =[500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
+            else:
+                dataset = 2
+                real_drift = [500]
+
+        elif search_in_IPDD_console_detected_drifts in line:
+            found_fixed = True
+            #print(line
             splitline = line.split('detected drifts')
             # LISTA DE DRIFTS REAIS
             real_drift = splitline[0].split('[')
@@ -295,17 +314,21 @@ def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_
             detected_drift = detected_drift[0].split(',')
             for i in range(0, len(detected_drift)):
                 detected_drift[i] = int(detected_drift[i])
+        elif found_adaptive:
+            pass
+        elif found_fixed:
+            pass
 
 
 
-            f_score = calculate_f_score(detected_drift, real_drift, 100)
+    f_score = calculate_f_score(detected_drift, real_drift, 100)
 
-            if len(real_drift) == 9:
-                dataset = 1
-            else:
-                dataset = 2
+    if len(real_drift) == 9:
+        dataset = 1
+    else:
+        dataset = 2
 
-            new_line = {'Tool': tool,
+    new_line = {'Tool': tool,
                         'Dataset': dataset,
                         'Event Log Name': log_name,
                         'Approach': windowing_type,
@@ -313,8 +336,7 @@ def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_
                         'F-score': f_score,
                         'Real drifts': real_drift,
                         'Detected drifts': detected_drift}
-            if new_line == None:
-                print(f)
+    print(new_line)
 
 
 
@@ -402,6 +424,7 @@ def read_framework_output_and_calculate_f_score(path_search):
 
                 real_drifts = finds_real_drifts_dataset2(approach, file)
             with open(full_path, 'r', errors='ignore') as f:
+                #print(f)
                 if 'apromore' in file:
                     f_scores_complete.append(find_detected_drifts_calcule_f_score_apromore(f, approach, window_size,
                                                                                            real_drifts, tool,
@@ -414,11 +437,6 @@ def read_framework_output_and_calculate_f_score(path_search):
                 elif 'IPDD' in file:
                     f_scores_complete.append(find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach,
                                                                                   windowing_type, window_size))
-                    if find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach,
-                                                                                  windowing_type, window_size) ==None:
-                        print('---ARQUIVO COM ERRO---')
-                        print(f)
-
     return f_scores_complete
 
 
