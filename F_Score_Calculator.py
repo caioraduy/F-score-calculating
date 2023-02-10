@@ -424,7 +424,11 @@ def read_framework_output_and_calculate_f_score(path_search):
 
                 real_drifts = finds_real_drifts_dataset2(approach, file)
             with open(full_path, 'r', errors='ignore') as f:
-                #print(f)
+                #
+
+
+
+                print(f)
                 if 'apromore' in file:
                     f_scores_complete.append(find_detected_drifts_calcule_f_score_apromore(f, approach, window_size,
                                                                                            real_drifts, tool,
