@@ -1,0 +1,299 @@
+Pathname of script: C:\Users\raduy\PycharmProjects\InteractiveProcessDriftDetectionFW
+Initializing IPDD Framework: model type [dfg] - [command line interface]
+----------------------------------------------
+Configuration:
+----------------------------------------------
+Approach: FIXED
+Window size: 32
+Metrics: ['Nodes', 'Edges']
+Event log: C:\BasesExperimentos\sudden_trace_noise0_1000_ROI.xes
+Real drifts: [500]
+----------------------------------------------
+Starting analyzing process drifts ...
+----- IPDD general parameters -----
+Logname: C:\BasesExperimentos\sudden_trace_noise0_1000_ROI.xes
+Approach: FIXED
+Read log as: TRACE
+Similarity metrics: [<Metric.NODES: 'Nodes'>, <Metric.EDGES: 'Edges'>]
+----- IPDD fixed window for control-flow drifts - parameters -----
+Read log as: UNITY
+Window size: 32
+Copying event log to input_folder: data\input\script\sudden_trace_noise0_1000_ROI.xes
+Event log successfully copied data\input\script\sudden_trace_noise0_1000_ROI.xes
+Importing event log: sudden_trace_noise0_1000_ROI.xes
+Log [sudden_trace_noise0_1000_ROI.xes] - total of cases [1000] - median case duration [4.433989722198911hrs]
+Creating evaluation path data\output\script\evaluation\sudden_trace_noise0_1000_ROI.xes\FIXED_win32
+User selected approach=FIXED reading log as=TRACE
+Metrics=[<Metric.NODES: 'Nodes'>, <Metric.EDGES: 'Edges'>]
+Starting windowing process...
+**************************************************************************
+*************** Similarity metrics calculation started *******************
+**************************************************************************
+Generating model for sub-log [0 - 31] - window [0]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w1.gv
+Generating model for sub-log [32 - 63] - window [1]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w2.gv
+**************************************************************************
+Starting monitoring thread for similarity metrics calculation
+**************************************************************************
+calculate_metrics - current window 2 - initial_trace = 32
+Starting [Nodes] calculation between windows [1-2]
+check_finish - final_window 0 - metrics_count 1 - total de metricas 2
+Starting [Edges] calculation between windows [1-2]
+Generating model for sub-log [64 - 95] - window [2]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w3.gv
+Saving [Edges] comparing windows [1-2]
+check_finish - final_window 0 - metrics_count 2 - total de metricas 2
+calculate_metrics - current window 3 - initial_trace = 64
+Starting [Nodes] calculation between windows [2-3]
+check_finish - final_window 0 - metrics_count 3 - total de metricas 2Starting [Edges] calculation between windows [2-3]
+
+Generating model for sub-log [96 - 127] - window [3]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w4.gv
+Saving [Edges] comparing windows [2-3]
+check_finish - final_window 0 - metrics_count 4 - total de metricas 2
+calculate_metrics - current window 4 - initial_trace = 96
+Starting [Nodes] calculation between windows [3-4]
+check_finish - final_window 0 - metrics_count 5 - total de metricas 2
+Starting [Edges] calculation between windows [3-4]
+check_finish - final_window 0 - metrics_count 6 - total de metricas 2Generating model for sub-log [128 - 159] - window [4]
+
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w5.gv
+calculate_metrics - current window 5 - initial_trace = 128
+Starting [Nodes] calculation between windows [4-5]
+check_finish - final_window 0 - metrics_count 7 - total de metricas 2
+Starting [Edges] calculation between windows [4-5]
+check_finish - final_window 0 - metrics_count 8 - total de metricas 2
+Generating model for sub-log [160 - 191] - window [5]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w6.gv
+calculate_metrics - current window 6 - initial_trace = 160
+Starting [Nodes] calculation between windows [5-6]
+check_finish - final_window 0 - metrics_count 9 - total de metricas 2Starting [Edges] calculation between windows [5-6]
+
+Generating model for sub-log [192 - 223] - window [6]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w7.gvSaving [Edges] comparing windows [5-6]
+
+check_finish - final_window 0 - metrics_count 10 - total de metricas 2
+calculate_metrics - current window 7 - initial_trace = 192
+Starting [Nodes] calculation between windows [6-7]
+check_finish - final_window 0 - metrics_count 11 - total de metricas 2Starting [Edges] calculation between windows [6-7]
+
+Generating model for sub-log [224 - 255] - window [7]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w8.gv
+Saving [Edges] comparing windows [6-7]
+check_finish - final_window 0 - metrics_count 12 - total de metricas 2
+calculate_metrics - current window 8 - initial_trace = 224
+Starting [Nodes] calculation between windows [7-8]
+check_finish - final_window 0 - metrics_count 13 - total de metricas 2
+Starting [Edges] calculation between windows [7-8]
+check_finish - final_window 0 - metrics_count 14 - total de metricas 2
+Generating model for sub-log [256 - 287] - window [8]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w9.gv
+calculate_metrics - current window 9 - initial_trace = 256
+Starting [Nodes] calculation between windows [8-9]
+check_finish - final_window 0 - metrics_count 15 - total de metricas 2
+Starting [Edges] calculation between windows [8-9]
+check_finish - final_window 0 - metrics_count 16 - total de metricas 2
+Generating model for sub-log [288 - 319] - window [9]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w10.gv
+calculate_metrics - current window 10 - initial_trace = 288
+Starting [Nodes] calculation between windows [9-10]
+check_finish - final_window 0 - metrics_count 17 - total de metricas 2Starting [Edges] calculation between windows [9-10]
+
+Generating model for sub-log [320 - 351] - window [10]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w11.gv
+Saving [Edges] comparing windows [9-10]
+check_finish - final_window 0 - metrics_count 18 - total de metricas 2
+calculate_metrics - current window 11 - initial_trace = 320
+Starting [Nodes] calculation between windows [10-11]
+check_finish - final_window 0 - metrics_count 19 - total de metricas 2
+Starting [Edges] calculation between windows [10-11]
+check_finish - final_window 0 - metrics_count 20 - total de metricas 2Generating model for sub-log [352 - 383] - window [11]
+
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w12.gv
+calculate_metrics - current window 12 - initial_trace = 352
+Starting [Nodes] calculation between windows [11-12]
+check_finish - final_window 0 - metrics_count 21 - total de metricas 2Starting [Edges] calculation between windows [11-12]
+
+Generating model for sub-log [384 - 415] - window [12]
+Saving [Edges] comparing windows [11-12]Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w13.gv
+
+check_finish - final_window 0 - metrics_count 22 - total de metricas 2
+calculate_metrics - current window 13 - initial_trace = 384
+Starting [Nodes] calculation between windows [12-13]
+check_finish - final_window 0 - metrics_count 23 - total de metricas 2
+Starting [Edges] calculation between windows [12-13]
+Generating model for sub-log [416 - 447] - window [13]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w14.gv
+Saving [Edges] comparing windows [12-13]
+check_finish - final_window 0 - metrics_count 24 - total de metricas 2
+calculate_metrics - current window 14 - initial_trace = 416
+Starting [Nodes] calculation between windows [13-14]
+check_finish - final_window 0 - metrics_count 25 - total de metricas 2
+Starting [Edges] calculation between windows [13-14]
+Generating model for sub-log [448 - 479] - window [14]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w15.gvSaving [Edges] comparing windows [13-14]
+
+check_finish - final_window 0 - metrics_count 26 - total de metricas 2
+calculate_metrics - current window 15 - initial_trace = 448
+Starting [Nodes] calculation between windows [14-15]
+check_finish - final_window 0 - metrics_count 27 - total de metricas 2
+Starting [Edges] calculation between windows [14-15]
+check_finish - final_window 0 - metrics_count 28 - total de metricas 2Generating model for sub-log [480 - 511] - window [15]
+
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w16.gv
+calculate_metrics - current window 16 - initial_trace = 480
+Starting [Nodes] calculation between windows [15-16]
+Starting [Edges] calculation between windows [15-16]
+check_finish - final_window 0 - metrics_count 29 - total de metricas 2Generating model for sub-log [512 - 543] - window [16]
+
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w17.gvSaving [Nodes] comparing windows [15-16]
+
+check_finish - final_window 0 - metrics_count 30 - total de metricas 2
+calculate_metrics - current window 17 - initial_trace = 512
+Starting [Nodes] calculation between windows [16-17]
+Starting [Edges] calculation between windows [16-17]
+Saving [Nodes] comparing windows [16-17]
+check_finish - final_window 0 - metrics_count 31 - total de metricas 2Generating model for sub-log [544 - 575] - window [17]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w18.gv
+
+Saving [Edges] comparing windows [16-17]
+check_finish - final_window 0 - metrics_count 32 - total de metricas 2
+calculate_metrics - current window 18 - initial_trace = 544
+Starting [Nodes] calculation between windows [17-18]
+check_finish - final_window 0 - metrics_count 33 - total de metricas 2
+Starting [Edges] calculation between windows [17-18]
+Generating model for sub-log [576 - 607] - window [18]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w19.gv
+Saving [Edges] comparing windows [17-18]
+check_finish - final_window 0 - metrics_count 34 - total de metricas 2
+calculate_metrics - current window 19 - initial_trace = 576
+Starting [Nodes] calculation between windows [18-19]
+check_finish - final_window 0 - metrics_count 35 - total de metricas 2
+Starting [Edges] calculation between windows [18-19]
+Generating model for sub-log [608 - 639] - window [19]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w20.gvSaving [Edges] comparing windows [18-19]
+
+check_finish - final_window 0 - metrics_count 36 - total de metricas 2
+calculate_metrics - current window 20 - initial_trace = 608
+Starting [Nodes] calculation between windows [19-20]
+check_finish - final_window 0 - metrics_count 37 - total de metricas 2
+Starting [Edges] calculation between windows [19-20]
+Generating model for sub-log [640 - 671] - window [20]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w21.gv
+Saving [Edges] comparing windows [19-20]
+check_finish - final_window 0 - metrics_count 38 - total de metricas 2
+calculate_metrics - current window 21 - initial_trace = 640
+Starting [Nodes] calculation between windows [20-21]
+check_finish - final_window 0 - metrics_count 39 - total de metricas 2Starting [Edges] calculation between windows [20-21]
+
+Generating model for sub-log [672 - 703] - window [21]
+Saving [Edges] comparing windows [20-21]
+check_finish - final_window 0 - metrics_count 40 - total de metricas 2Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w22.gv
+
+calculate_metrics - current window 22 - initial_trace = 672
+Starting [Nodes] calculation between windows [21-22]
+check_finish - final_window 0 - metrics_count 41 - total de metricas 2Starting [Edges] calculation between windows [21-22]
+
+Generating model for sub-log [704 - 735] - window [22]
+Saving [Edges] comparing windows [21-22]Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w23.gv
+
+check_finish - final_window 0 - metrics_count 42 - total de metricas 2
+calculate_metrics - current window 23 - initial_trace = 704
+Starting [Nodes] calculation between windows [22-23]
+check_finish - final_window 0 - metrics_count 43 - total de metricas 2Starting [Edges] calculation between windows [22-23]
+
+check_finish - final_window 0 - metrics_count 44 - total de metricas 2
+Generating model for sub-log [736 - 767] - window [23]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w24.gv
+calculate_metrics - current window 24 - initial_trace = 736
+Starting [Nodes] calculation between windows [23-24]
+check_finish - final_window 0 - metrics_count 45 - total de metricas 2
+Starting [Edges] calculation between windows [23-24]
+Generating model for sub-log [768 - 799] - window [24]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w25.gv
+Saving [Edges] comparing windows [23-24]
+check_finish - final_window 0 - metrics_count 46 - total de metricas 2
+calculate_metrics - current window 25 - initial_trace = 768
+Starting [Nodes] calculation between windows [24-25]
+check_finish - final_window 0 - metrics_count 47 - total de metricas 2Starting [Edges] calculation between windows [24-25]
+
+Generating model for sub-log [800 - 831] - window [25]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w26.gvSaving [Edges] comparing windows [24-25]
+check_finish - final_window 0 - metrics_count 48 - total de metricas 2
+
+calculate_metrics - current window 26 - initial_trace = 800
+Starting [Nodes] calculation between windows [25-26]
+check_finish - final_window 0 - metrics_count 49 - total de metricas 2Starting [Edges] calculation between windows [25-26]
+
+Generating model for sub-log [832 - 863] - window [26]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w27.gv
+Saving [Edges] comparing windows [25-26]
+check_finish - final_window 0 - metrics_count 50 - total de metricas 2
+calculate_metrics - current window 27 - initial_trace = 832
+Starting [Nodes] calculation between windows [26-27]
+check_finish - final_window 0 - metrics_count 51 - total de metricas 2
+Starting [Edges] calculation between windows [26-27]
+Generating model for sub-log [864 - 895] - window [27]
+Saving [Edges] comparing windows [26-27]Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w28.gv
+
+check_finish - final_window 0 - metrics_count 52 - total de metricas 2
+calculate_metrics - current window 28 - initial_trace = 864
+Starting [Nodes] calculation between windows [27-28]
+check_finish - final_window 0 - metrics_count 53 - total de metricas 2
+Starting [Edges] calculation between windows [27-28]
+Generating model for sub-log [896 - 927] - window [28]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w29.gv
+Saving [Edges] comparing windows [27-28]
+check_finish - final_window 0 - metrics_count 54 - total de metricas 2
+calculate_metrics - current window 29 - initial_trace = 896
+Starting [Nodes] calculation between windows [28-29]
+check_finish - final_window 0 - metrics_count 55 - total de metricas 2Starting [Edges] calculation between windows [28-29]
+
+Generating model for sub-log [928 - 959] - window [29]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w30.gv
+Saving [Edges] comparing windows [28-29]
+check_finish - final_window 0 - metrics_count 56 - total de metricas 2
+calculate_metrics - current window 30 - initial_trace = 928
+Starting [Nodes] calculation between windows [29-30]
+check_finish - final_window 0 - metrics_count 57 - total de metricas 2Starting [Edges] calculation between windows [29-30]
+
+Generating model for sub-log [960 - 991] - window [30]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w31.gv
+Saving [Edges] comparing windows [29-30]
+check_finish - final_window 0 - metrics_count 58 - total de metricas 2
+calculate_metrics - current window 31 - initial_trace = 960
+Starting [Nodes] calculation between windows [30-31]
+check_finish - final_window 0 - metrics_count 59 - total de metricas 2
+Starting [Edges] calculation between windows [30-31]
+Analyzing final window... size 8 window_count 31
+Setting final window value 31
+Generating model for sub-log [992 - 999] - window [31]
+Saving [Edges] comparing windows [30-31]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win_32 - dfg_w32.gv
+check_finish - final_window 31 - metrics_count 60 - total de metricas 2
+calculate_metrics - current window 32 - initial_trace = 992
+Starting [Nodes] calculation between windows [31-32]
+check_finish - final_window 31 - metrics_count 61 - total de metricas 2
+Starting [Edges] calculation between windows [31-32]
+Finished mining calculation
+*** Initial indexes for generated windows: {0: '0', 32: '32', 64: '64', 96: '96', 128: '128', 160: '160', 192: '192', 224: '224', 256: '256', 288: '288', 320: '320', 352: '352', 384: '384', 416: '416', 448: '448', 480: '480', 512: '512', 544: '544', 576: '576', 608: '608', 640: '640', 672: '672', 704: '704', 736: '736', 768: '768', 800: '800', 832: '832', 864: '864', 896: '896', 928: '928', 960: '960', 992: '992'}
+*** Number of windows: [32]
+Waiting for IPDD finishes ... Status running: True
+Saving [Edges] comparing windows [31-32]
+check_finish - final_window 31 - metrics_count 62 - total de metricas 2
+
+**************************************************************************
+*** Similarity metrics calculation finished for the file sudden_trace_noise0_1000_ROI.xes
+**************************************************************************
+Finished metrics calculation
+**************************************************************************
+Finishing monitoring thread for metrics calculation
+**************************************************************************
+IPDD finished drift analysis
+Saving drift windows: data\output\script\similarity_metrics\dfg\sudden_trace_noise0_1000_ROI.xes\FIXED_win32_drift_windows.txt
+IPDD detect control-flow drift in windows [16, 17, 2, 3, 6, 7, 10, 12, 13, 14, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 29, 30, 31, 32] - traces [480, 512, 32, 64, 160, 192, 288, 352, 384, 416, 544, 576, 608, 640, 672, 736, 768, 800, 832, 864, 896, 928, 960, 992]
+Calculating metric real drifts [500] - detected drifts [480, 512, 32, 64, 160, 192, 288, 352, 384, 416, 544, 576, 608, 640, 672, 736, 768, 800, 832, 864, 896, 928, 960, 992] - total of traces 1000
+Saving evaluation metrics...
+IPDD F-score: {<EvaluationMetricList.F_SCORE: 'F-score'>: 0.07999999999999999, <EvaluationMetricList.FPR: 'False positive rate (FPR)'>: 0.023023023023023025, <EvaluationMetricList.MEAN_DELAY: 'Mean delay'>: 12.0}
+[0m
