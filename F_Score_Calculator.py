@@ -13,33 +13,30 @@ def calculate_f_score(detected_drifts_list, real_drifts, error_tolerance):
     real_drifts_cp = real_drifts.copy()
     number_of_real_drifts = len(real_drifts_cp)
     real_drifts_cp.sort()
-    if real_drifts_cp == [0]:
-        f_score = 0
-    else:
-        tp_list = []
-        fp_list = []
+    tp_list = []
+    fp_list = []
     # here we compare the drifts detected and add the TP or FP
-        for x in range(0, len(detected_drifts_list)):
-            tp_found = False
-            for y in range(0, len(real_drifts_cp)):
-                dist = detected_drifts_list[x] - real_drifts_cp[y]
+    for x in range(0, len(detected_drifts_list)):
+        tp_found = False
+        for y in range(0, len(real_drifts_cp)):
+            dist = detected_drifts_list[x] - real_drifts_cp[y]
             # we only consider the drift detected as TP, if the drift is detected after
             # the real drift and the error tolerance is lower than the window size
-                if 0 <= dist <= error_tolerance:
-                    tp_list.append(dist)
-                    tp_found = True
-                    real_drifts_cp.remove(real_drifts_cp[y])
-                    break
-            if not tp_found:
-                fp_list.append(detected_drifts_list[x])
-        tp = len(tp_list)
-        fp = len(fp_list)
-        if (tp + fp) != len(detected_drifts_list):
+            if 0 <= dist <= error_tolerance:
+                tp_list.append(dist)
+                tp_found = True
+                real_drifts_cp.remove(real_drifts_cp[y])
+                break
+        if not tp_found:
+            fp_list.append(detected_drifts_list[x])
+    tp = len(tp_list)
+    fp = len(fp_list)
+    if (tp + fp) != len(detected_drifts_list):
         # just to confirm that each detect drift is counted as a TP or FP
         # this message must not be shown
-            print(f'F-score with problems!')
-        fn = number_of_real_drifts - tp
-        f_score = tp / (tp + (fp + fn) / 2)
+        print(f'F-score with problems!')
+    fn = number_of_real_drifts - tp
+    f_score = tp / (tp + (fp + fn) / 2)
 
     return f_score
 
@@ -133,9 +130,7 @@ def extracts_information_from_dataset1_IPDD_file(file_name):
 
     tool = 'IPDD'
     #print(log_name)
-    dataset = 1
-    real_drift = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
-    return tool, log_name, approach, windowing_type, windows_size, dataset, real_drift
+    return tool, log_name, approach, windowing_type, windows_size
 
 def extracts_information_from_dataset2_IPDD_file(file_name):
     #print(f'Get information from IPDD framework: {file_name}')
@@ -157,10 +152,8 @@ def extracts_information_from_dataset2_IPDD_file(file_name):
         print(file_name)
 
     tool = 'IPDD'
-    dataset = 2
-    real_drift = [500]
     #print(log_name)
-    return tool, log_name, approach, windowing_type, windows_size, dataset, real_drift
+    return tool, log_name, approach, windowing_type, windows_size
 
 
 # this function extracts information of the archives .txt for the event logs
@@ -296,15 +289,22 @@ def find_detected_drift_and_calculate_f_score_vdd(f, approach,
             found = True
     return new_line
 
-def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_type, windows_size,
-    dataset, real_drift):
+def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_type, windows_size
+                                                ):
     search_in_IPDD_console_detected_drifts = 'detected drifts'
     search_in_IPDD_console_detected_drifts_adaptive = 'Similarity metrics confirm the drifts in'
     search_in_IPDD_console_zero_detected_drift_adaptive = 'Adaptive IPDD detect control-flow drifts in traces []'
     drift = []
     found_adaptive = False
     found_fixed = False
-
+    if '5k' or '2.5k' in f:
+        #print(log_name)
+        dataset = 1
+        real_drift = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
+    elif '1000' in f:
+       #print(log_name)
+        dataset = 2
+        real_drift = [500]
 
 
 
@@ -438,7 +438,8 @@ def read_framework_output_and_calculate_f_score(path_search):
                     tool, log_name, approach, windowing_type, window_size, win_step \
                         = extracts_information_from_dataset1_VDD_file(file)
                 elif 'IPDD' in file:
-                    tool, log_name, approach, windowing_type, window_size, dataset, real_drift = extracts_information_from_dataset1_IPDD_file(file)
+                    tool, log_name, approach, windowing_type, window_size \
+                        = extracts_information_from_dataset1_IPDD_file(file)
 
                 real_drifts = finds_real_drifts_dataset1(approach, file)
             elif '1000' in file:
@@ -449,7 +450,7 @@ def read_framework_output_and_calculate_f_score(path_search):
                     tool, log_name, approach, windowing_type, window_size, win_step \
                         = extracts_information_from_dataset2_VDD_file(file)
                 elif 'IPDD' in file:
-                    tool, log_name, approach, windowing_type, window_size, dataset, real_drift = extracts_information_from_dataset2_IPDD_file(file)
+                    tool, log_name, approach, windowing_type, window_size = extracts_information_from_dataset2_IPDD_file(file)
 
                 real_drifts = finds_real_drifts_dataset2(approach, file)
             with open(full_path, 'r', errors='ignore') as f:
@@ -465,7 +466,7 @@ def read_framework_output_and_calculate_f_score(path_search):
                                                                                            win_step))
                 elif 'IPDD' in file:
                     f_scores_complete.append(find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach,
-                                                                                  windowing_type, window_size, dataset, real_drift))
+                                                                                  windowing_type, window_size))
     return f_scores_complete
 
 
