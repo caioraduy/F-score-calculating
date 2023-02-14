@@ -460,7 +460,8 @@ def read_framework_output_and_calculate_f_score(path_search):
                                                                                            win_step))
                 elif 'IPDD' in file:
                     f_scores_complete.append(find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach,
-                                                                                  windowing_type, window_size, dataset, real_drift))
+                                                                                  windowing_type, window_size,
+                                                                                  dataset, real_drift))
     return f_scores_complete
 
 
@@ -581,12 +582,14 @@ if __name__ == '__main__':
     #APROMORE
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset1)
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset2)
-    #VDD
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset1)
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset2)
+
     #IPDD
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset1)
     f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset2)
+
+    # VDD
+    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset1)
+    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset2)
 
 
 

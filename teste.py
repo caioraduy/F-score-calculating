@@ -1,14 +1,16 @@
-path= "C:\\Users\\raduy\\PycharmProjects\\InteractiveProcessDriftDetectionFW\\data\\output\\console"
+path= "C:\\Users\\raduy\\PycharmProjects\\InteractiveProcessDriftDetectionFW\\data\\output\\faltantes"
 import os
 
 for root, directories, files in os.walk(path):
     for file in files:
-        old_file = os.path.join(root,file)
+        if not 'IPDD_' in file:
 
-        nfile = 'IPDD_' +file
-        new_file = os.path.join(root, nfile)
+            old_file = os.path.join(root,file)
 
-        os.rename(old_file, new_file)
+            nfile =  file[0:4] +'_' + file[4:0]
+            new_file = os.path.join(root, nfile)
+
+            os.rename(old_file, new_file)
 
 
 

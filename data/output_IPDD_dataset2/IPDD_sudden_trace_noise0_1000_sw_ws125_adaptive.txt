@@ -5,39 +5,41 @@ Configuration:
 ----------------------------------------------
 Approach: ADAPTIVE
 Delta - ADWIN detector: 0.002
-Window size: 200
+Window size: 125
 Adaptive control-flow approach: TRACE
 Export sublogs: False
 Update process models: False
 Metrics: ['Nodes', 'Edges']
-Event log: C:\BasesExperimentos\sudden_trace_noise0_1000_cp.xes
+Event log: C:\BasesExperimentos\sudden_trace_noise0_1000_sw.xes
 Real drifts: [500]
 ----------------------------------------------
 Starting analyzing process drifts ...
 ----- IPDD general parameters -----
-Logname: C:\BasesExperimentos\sudden_trace_noise0_1000_cp.xes
+Logname: C:\BasesExperimentos\sudden_trace_noise0_1000_sw.xes
 Approach: ADAPTIVE
 Read log as: TRACE
 Similarity metrics: [<Metric.NODES: 'Nodes'>, <Metric.EDGES: 'Edges'>]
 ----- Adaptive IPDD for control-flow drifts - parameters -----
 Perspective: CONTROL_FLOW
 Approach: TRACE
-Window size: 200
+Window size: 125
 ADWIN delta: 0.002
-Copying event log to input_folder: data\input\script\sudden_trace_noise0_1000_cp.xes
-Event log successfully copied data\input\script\sudden_trace_noise0_1000_cp.xes
-Importing event log: sudden_trace_noise0_1000_cp.xes
-Log [sudden_trace_noise0_1000_cp.xes] - total of cases [1000] - median case duration [4.636198888884651hrs]
+Copying event log to input_folder: data\input\script\sudden_trace_noise0_1000_sw.xes
+Event log successfully copied data\input\script\sudden_trace_noise0_1000_sw.xes
+Importing event log: sudden_trace_noise0_1000_sw.xes
+Log [sudden_trace_noise0_1000_sw.xes] - total of cases [1000] - median case duration [4.523778333332803hrs]
+Creating path "adaptive\sudden_trace_noise0_1000_sw.xes\CONTROL_FLOW_TRACE_win125_delta0.002" for user script
+Creating path "adaptive\sudden_trace_noise0_1000_sw.xes\CONTROL_FLOW_TRACE_win125_delta0.002\models" for user script
+Creating path "adaptive\sudden_trace_noise0_1000_sw.xes\CONTROL_FLOW_TRACE_win125_delta0.002\sublogs" for user script
+Creating evaluation path data\output\script\evaluation\sudden_trace_noise0_1000_sw.xes\ADAPTIVE_CONTROL_FLOW_TRACE_win125_delta0.002
 User selected approach=ADAPTIVE reading log as=TRACE
 Metrics=[<Metric.NODES: 'Nodes'>, <Metric.EDGES: 'Edges'>]
 Starting windowing process...
-Trace by trace approach - ADWIN to log sudden_trace_noise0_1000_cp.xes delta 0.002
-Initial model discovered using traces from 0 to 199
+Trace by trace approach - ADWIN to log sudden_trace_noise0_1000_sw.xes delta 0.002
+Initial model discovered using traces from 0 to 124
 **************************************************************************
 *************** Similarity metrics calculation started *******************
 **************************************************************************
-Deleting file data\output\script\similarity_metrics\dfg\sudden_trace_noise0_1000_cp.xes\Nodes_ADAPTIVE_CONTROL_FLOW_TRACE_win200_delta0.002.txt
-Deleting file data\output\script\similarity_metrics\dfg\sudden_trace_noise0_1000_cp.xes\Edges_ADAPTIVE_CONTROL_FLOW_TRACE_win200_delta0.002.txt
 Reading trace [0]...
 Reading trace [1]...
 Reading trace [2]...
@@ -552,9 +554,9 @@ Reading trace [510]...
 Reading trace [511]...
 Metric [FITNESS] - Drift detected at trace 511
 Metric [PRECISION] - Drift detected at trace 511
-Generating model for sub-log [0 - 199] - window [0]
-Saving data\output\script\models\dfg\sudden_trace_noise0_1000_cp.xes\ADAPTIVE_CONTROL_FLOW_TRACE_win200_delta0.002 - dfg_w1.gv
-Discover a new model using traces from 511 to 710
+Generating model for sub-log [0 - 124] - window [0]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_sw.xes\ADAPTIVE_CONTROL_FLOW_TRACE_win125_delta0.002 - dfg_w1.gv
+Discover a new model using traces from 511 to 635
 Reading trace [512]...
 Reading trace [513]...
 Reading trace [514]...
@@ -1043,35 +1045,35 @@ Reading trace [996]...
 Reading trace [997]...
 Reading trace [998]...
 Reading trace [999]...
-Analyzing final window... size 200 window_count 1
+Analyzing final window... size 125 window_count 1
 Setting final window value 1
-Generating model for sub-log [511 - 710] - window [1]
-Saving data\output\script\models\dfg\sudden_trace_noise0_1000_cp.xes\ADAPTIVE_CONTROL_FLOW_TRACE_win200_delta0.002 - dfg_w2.gv
-**************************************************************************calculate_metrics - current window 2 - initial_trace = 511
-
-Starting monitoring thread for similarity metrics calculationStarting [Nodes] calculation between windows [1-2]
-
+Generating model for sub-log [511 - 635] - window [1]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_sw.xes\ADAPTIVE_CONTROL_FLOW_TRACE_win125_delta0.002 - dfg_w2.gv
 **************************************************************************
-check_finish - final_window 1 - metrics_count 1 - total de metricas 2
-Starting [Edges] calculation between windows [1-2]
+Starting monitoring thread for similarity metrics calculation
+**************************************************************************
+calculate_metrics - current window 2 - initial_trace = 511
+Starting [Nodes] calculation between windows [1-2]
+check_finish - final_window 1 - metrics_count 1 - total de metricas 2Starting [Edges] calculation between windows [1-2]
+
 Saving [Edges] comparing windows [1-2]
-Saving plot for adaptive control-flow Trace by trace - sudden_trace_noise0_1000_cp.xescheck_finish - final_window 1 - metrics_count 2 - total de metricas 2
+check_finish - final_window 1 - metrics_count 2 - total de metricas 2
 
 **************************************************************************
+*** Similarity metrics calculation finished for the file sudden_trace_noise0_1000_sw.xesSaving plot for adaptive control-flow Trace by trace - sudden_trace_noise0_1000_sw.xes
 
-*** Similarity metrics calculation finished for the file sudden_trace_noise0_1000_cp.xes
 **************************************************************************
-Finished metrics calculation**************************************************************************
+Finished metrics calculation
+**************************************************************************
 Finishing monitoring thread for metrics calculation
 **************************************************************************
-
-Saving change points to file data\output\script\adaptive\sudden_trace_noise0_1000_cp.xes\CONTROL_FLOW_TRACE_win200_delta0.002\drifts_Trace by trace.txt
+Saving change points to file data\output\script\adaptive\sudden_trace_noise0_1000_sw.xes\CONTROL_FLOW_TRACE_win125_delta0.002\drifts_Trace by trace.txt
 Finished mining calculation
 *** Initial indexes for generated windows: {0: '0', 511: '511'}
 *** Number of windows: [2]
 IPDD finished drift analysis
 Adaptive IPDD detect control-flow drifts in traces [511]
-Saving drift windows: data\output\script\similarity_metrics\dfg\sudden_trace_noise0_1000_cp.xes\ADAPTIVE_TRACE_win200_delta0.002_drift_windows.txt
+Saving drift windows: data\output\script\similarity_metrics\dfg\sudden_trace_noise0_1000_sw.xes\ADAPTIVE_TRACE_win125_delta0.002_drift_windows.txt
 Similarity metrics confirm the drifts in  [511]
 ********* IPDD evaluation metrics results *********
 [0m
