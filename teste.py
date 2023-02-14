@@ -1,4 +1,4 @@
-path= "C:\\Users\\raduy\\PycharmProjects\\InteractiveProcessDriftDetectionFW\\data\\output\\experimentos"
+path= "C:\\Users\\raduy\\PycharmProjects\\InteractiveProcessDriftDetectionFW\\data\\output\\console"
 import os
 
 for root, directories, files in os.walk(path):
