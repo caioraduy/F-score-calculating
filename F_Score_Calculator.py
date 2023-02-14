@@ -118,7 +118,8 @@ def extracts_information_from_dataset1_IPDD_file(file_name):
     windows_size = splitline[2]
     if windows_size == None:
         print("erro")
-    #print(windows_size)
+    print(windows_size)
+    print(file_name)
     windows_size = windows_size[2:]
     windows_size = int(windows_size)
 
@@ -129,8 +130,10 @@ def extracts_information_from_dataset1_IPDD_file(file_name):
         print(file_name)
 
     tool = 'IPDD'
+    dataset = 1
+    real_drift = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
     #print(log_name)
-    return tool, log_name, approach, windowing_type, windows_size
+    return tool, log_name, approach, windowing_type, windows_size, dataset, real_drift
 
 def extracts_information_from_dataset2_IPDD_file(file_name):
     #print(f'Get information from IPDD framework: {file_name}')
@@ -152,8 +155,10 @@ def extracts_information_from_dataset2_IPDD_file(file_name):
         print(file_name)
 
     tool = 'IPDD'
+    dataset = 2
+    real_drift =[500]
     #print(log_name)
-    return tool, log_name, approach, windowing_type, windows_size
+    return tool, log_name, approach, windowing_type, windows_size, dataset, real_drift
 
 
 # this function extracts information of the archives .txt for the event logs
@@ -164,7 +169,7 @@ def extracts_information_from_dataset1_apromore_file(file_name):
     splitline = file_name_being_analyzed.split('_')
     log_name = splitline[1]
     approach = splitline[2]
-    windows_size = splitline[3]
+    windows_size = splitline[-3]
     windows_size = windows_size[2:]
     if windows_size == 'default':
         windows_size = 200
@@ -289,27 +294,15 @@ def find_detected_drift_and_calculate_f_score_vdd(f, approach,
             found = True
     return new_line
 
-def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_type, windows_size
-                                                ):
+def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_type, windows_size,
+                                                dataset, real_drift):
+
     search_in_IPDD_console_detected_drifts = 'detected drifts'
     search_in_IPDD_console_detected_drifts_adaptive = 'Similarity metrics confirm the drifts in'
     search_in_IPDD_console_zero_detected_drift_adaptive = 'Adaptive IPDD detect control-flow drifts in traces []'
     drift = []
     found_adaptive = False
     found_fixed = False
-    if '5k' or '2.5k' in f:
-        #print(log_name)
-        dataset = 1
-        real_drift = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
-    elif '1000' in f:
-       #print(log_name)
-        dataset = 2
-        real_drift = [500]
-
-
-
-    window_with_drift = []
-    new_line = None
 
     for line in f:
         if search_in_IPDD_console_zero_detected_drift_adaptive in line:
@@ -438,8 +431,8 @@ def read_framework_output_and_calculate_f_score(path_search):
                     tool, log_name, approach, windowing_type, window_size, win_step \
                         = extracts_information_from_dataset1_VDD_file(file)
                 elif 'IPDD' in file:
-                    tool, log_name, approach, windowing_type, window_size \
-                        = extracts_information_from_dataset1_IPDD_file(file)
+                    tool, log_name, approach, windowing_type, window_size, dataset,\
+                    real_drift = extracts_information_from_dataset1_IPDD_file(file)
 
                 real_drifts = finds_real_drifts_dataset1(approach, file)
             elif '1000' in file:
@@ -450,7 +443,8 @@ def read_framework_output_and_calculate_f_score(path_search):
                     tool, log_name, approach, windowing_type, window_size, win_step \
                         = extracts_information_from_dataset2_VDD_file(file)
                 elif 'IPDD' in file:
-                    tool, log_name, approach, windowing_type, window_size = extracts_information_from_dataset2_IPDD_file(file)
+                    tool, log_name, approach, windowing_type, window_size, dataset,\
+                        real_drift = extracts_information_from_dataset2_IPDD_file(file)
 
                 real_drifts = finds_real_drifts_dataset2(approach, file)
             with open(full_path, 'r', errors='ignore') as f:
@@ -466,7 +460,7 @@ def read_framework_output_and_calculate_f_score(path_search):
                                                                                            win_step))
                 elif 'IPDD' in file:
                     f_scores_complete.append(find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach,
-                                                                                  windowing_type, window_size))
+                                                                                  windowing_type, window_size, dataset, real_drift))
     return f_scores_complete
 
 
