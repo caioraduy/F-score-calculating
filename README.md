@@ -2,7 +2,7 @@
 This program calculates the F-score for process drift detection tools (Apromore ProDrift, VDD, and ProM Concept Drift). 
 The program structure is divided by:
 
-1. F_Score_Calculator.py: This program calculates the F-score for VDD and Apromore ProDrift plugin using the output of the tools. The output of the tools are saved in .txt files using a specific name pattern. The program reads the files to identify the reported drifts, and then calculates all the F-scores. For the ProM Concept Drift plugin, the drifts are reported in a png file. In this case the reported drifts are manually inputted in the program. After calculating all the F-scores the program saves an .xlsx file with each file's metric and the parameters.
+1. F_Score_Calculator.py: This program calculates the F-score for VDD, Apromore ProDrift plugin and IPDD framework using the output of the tools. The output of the tools are saved in .txt files using a specific name pattern. The program reads the files to identify the reported drifts, and then calculates all the F-scores. For the ProM Concept Drift plugin, the drifts are reported in a png file. In this case the reported drifts are manually inputted in the program. After calculating all the F-scores the program saves an .xlsx file with each file's metric and the parameters.
 For VDD and Apromore ProDrift the files must follow the rules described bellow:
 
 1.1 VDD:
@@ -37,12 +37,17 @@ For VDD and Apromore ProDrift the files must follow the rules described bellow:
 		[approach] = adaptive
 		file name:log_sudden_trace_noise0_1000_cb_trace_ws50_adaptive_apromore.txt
 1.3 IPDD:
-     Dataset 1) IPDD_[log_name]_ws[winsize]_[approach].txt (Trace by trace)
+     Dataset 1) IPDD_[log_name]_ws[winsize]_[approach].txt
      example:
      		[log_name] = cb5k
 		[winsize] = 50 
                 [approach] = fixed 
                 file name: IPDD_cb5k_ws50_fixed.txt
+     Dataset 2) IPDD_[log_name]_ws[winsize]_[approach].txt
+                [log_name] = sudden_trace_noise0_1000_cb
+		[winsize] = 32
+		[approach] = adaptive
+		file name: IPDD_sudden_trace_noise0_1000_cb_ws32_adaptive.txt
            
 3. data: This folder contains the data from the performed scenarios
 
