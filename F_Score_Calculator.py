@@ -183,7 +183,7 @@ def extracts_information_from_dataset1_apromore_file(file_name):
     return tool, log_name, approach, windowing_type, windows_size
 
 
-# extracts information from name of the outputted VDD's files - dataset1
+# extracts information from name of the outputted VDD's files - IPDD_dataset1
 def extracts_information_from_dataset1_VDD_file(file_name):
     print(f'Get information from VDD: {file_name}')
     file_name_being_analyzed = file_name
@@ -570,6 +570,7 @@ if __name__ == '__main__':
     path_vdd_sudden_dataset2 = os.path.join('data', 'output_vdd_dataset2')
     path_IPDD_sudden_dataset1 = os.path.join('data', 'output_IPDD_dataset1_old')
     path_IPDD_sudden_dataset2 = os.path.join('data', 'output_IPDD_dataset2')
+    path_IPDD_sudden_fixed = os.path.join('data', 'IPDD_dataset1')
 
     vdd_match_string_change_points = 'x lines:'
 
@@ -580,16 +581,19 @@ if __name__ == '__main__':
     # list containing all the calculated f_scores
     f_scores = []
     #APROMORE
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset1)
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset2)
+    #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset1)
+    #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset2)
 
     #IPDD
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset1)
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset2)
+    #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset1)
+    #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset2)
+
 
     # VDD
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset1)
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset2)
+   #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset1)
+    #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset2)
+
+    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_fixed)
 
 
 
