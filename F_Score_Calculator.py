@@ -297,7 +297,7 @@ def find_detected_drift_and_calculate_f_score_vdd(f, approach,
 def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_type, windows_size,
                                                 dataset, real_drift):
 
-    search_in_IPDD_console_detected_drifts = 'detected drifts'
+    search_in_IPDD_console_detected_drifts = 'IPDD detect control-flow drift in windows'
     search_in_IPDD_console_detected_drifts_adaptive = 'Similarity metrics confirm the drifts in'
     search_in_IPDD_console_zero_detected_drift_adaptive = 'Adaptive IPDD detect control-flow drifts in traces []'
     drift = []
@@ -323,27 +323,30 @@ def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_
 
         elif search_in_IPDD_console_detected_drifts in line:
             found_fixed = True
-            #print(line
-            splitline = line.split('detected drifts')
+            print(line)
+            splitline = line.split('traces')
+            print(splitline)
             # LISTA DE DRIFTS REAIS
-            real_drift = splitline[0].split('[')
-            real_drift = real_drift[1].split(']')
-            real_drift = real_drift[0].split(',')
+            detected_drift = splitline[1].split('[')
+            print(detected_drift)
+            detected_drift = detected_drift[1].split(']')
+            print('----------')
+            print(detected_drift)
+            detected_drift = detected_drift[0].split(',')
+            print(detected_drift)
 
-            for i in range(0, len(real_drift)):
-                real_drift[i] = int(real_drift[i])
+            for i in range(0, len(detected_drift)):
+                if not detected_drift[i]:
+                    detected_drift[i] = 0
+                detected_drift[i] = int(detected_drift[i])
             #print(real_drift)
             #LISTA DE DRIFTS DETECTADOS
-            detected_drift = splitline[1].split('detected drifts')
-            detected_drift = detected_drift[0].split('[')
-            detected_drift = detected_drift[1].split(']')
-            detected_drift = detected_drift[0].split(',')
-            for i in range(0, len(detected_drift)):
-                detected_drift[i] = int(detected_drift[i])
+
         elif found_adaptive:
             pass
         elif found_fixed:
             pass
+    print(detected_drift)
 
     f_score = calculate_f_score(detected_drift, real_drift, 100)
 
