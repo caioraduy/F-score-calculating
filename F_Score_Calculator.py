@@ -573,7 +573,7 @@ if __name__ == '__main__':
     path_vdd_sudden_dataset2 = os.path.join('data', 'output_vdd_dataset2')
     path_IPDD_sudden_dataset1 = os.path.join('data', 'output_IPDD_dataset1_old')
     path_IPDD_sudden_dataset2 = os.path.join('data', 'output_IPDD_dataset2')
-    path_IPDD_sudden_fixed = os.path.join('data', 'IPDD_dataset1')
+    path_IPDD_sudden_fixed = os.path.join('data', 'dataset2')
 
     vdd_match_string_change_points = 'x lines:'
 

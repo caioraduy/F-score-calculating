@@ -1,0 +1,104 @@
+Pathname of script: C:\Users\raduy\PycharmProjects\InteractiveProcessDriftDetectionFW
+Initializing IPDD Framework: model type [dfg] - [command line interface]
+----------------------------------------------
+Configuration:
+----------------------------------------------
+Approach: FIXED
+Window size: 125
+Metrics: ['Nodes', 'Edges']
+Event log: C:\BasesExperimentos\sudden_trace_noise0_1000_cf.xes
+----------------------------------------------
+Starting analyzing process drifts ...
+----- IPDD general parameters -----
+Logname: C:\BasesExperimentos\sudden_trace_noise0_1000_cf.xes
+Approach: FIXED
+Read log as: TRACE
+Similarity metrics: [<Metric.NODES: 'Nodes'>, <Metric.EDGES: 'Edges'>]
+----- IPDD fixed window for control-flow drifts - parameters -----
+Read log as: UNITY
+Window size: 125
+Copying event log to input_folder: data\input\script\sudden_trace_noise0_1000_cf.xes
+Event log successfully copied data\input\script\sudden_trace_noise0_1000_cf.xes
+Importing event log: sudden_trace_noise0_1000_cf.xes
+Log [sudden_trace_noise0_1000_cf.xes] - total of cases [1000] - median case duration [4.726961388919089hrs]
+User selected approach=FIXED reading log as=TRACE
+Metrics=[<Metric.NODES: 'Nodes'>, <Metric.EDGES: 'Edges'>]
+Starting windowing process...
+**************************************************************************
+*************** Similarity metrics calculation started *******************
+**************************************************************************
+Deleting file data\output\script\similarity_metrics\dfg\sudden_trace_noise0_1000_cf.xes\Nodes_FIXED_win125.txt
+Deleting file data\output\script\similarity_metrics\dfg\sudden_trace_noise0_1000_cf.xes\Edges_FIXED_win125.txt
+Generating model for sub-log [0 - 124] - window [0]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_cf.xes\FIXED_win_125 - dfg_w1.gv
+Generating model for sub-log [125 - 249] - window [1]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_cf.xes\FIXED_win_125 - dfg_w2.gv
+**************************************************************************calculate_metrics - current window 2 - initial_trace = 125
+
+Starting monitoring thread for similarity metrics calculationStarting [Nodes] calculation between windows [1-2]
+
+**************************************************************************
+check_finish - final_window 0 - metrics_count 1 - total de metricas 2
+Starting [Edges] calculation between windows [1-2]
+check_finish - final_window 0 - metrics_count 2 - total de metricas 2
+Generating model for sub-log [250 - 374] - window [2]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_cf.xes\FIXED_win_125 - dfg_w3.gv
+calculate_metrics - current window 3 - initial_trace = 250
+Starting [Nodes] calculation between windows [2-3]
+check_finish - final_window 0 - metrics_count 3 - total de metricas 2Starting [Edges] calculation between windows [2-3]
+
+check_finish - final_window 0 - metrics_count 4 - total de metricas 2Generating model for sub-log [375 - 499] - window [3]
+
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_cf.xes\FIXED_win_125 - dfg_w4.gv
+calculate_metrics - current window 4 - initial_trace = 375
+Starting [Nodes] calculation between windows [3-4]
+check_finish - final_window 0 - metrics_count 5 - total de metricas 2
+Starting [Edges] calculation between windows [3-4]
+check_finish - final_window 0 - metrics_count 6 - total de metricas 2Generating model for sub-log [500 - 624] - window [4]
+
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_cf.xes\FIXED_win_125 - dfg_w5.gv
+calculate_metrics - current window 5 - initial_trace = 500
+Starting [Nodes] calculation between windows [4-5]
+check_finish - final_window 0 - metrics_count 7 - total de metricas 2Starting [Edges] calculation between windows [4-5]
+
+Generating model for sub-log [625 - 749] - window [5]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_cf.xes\FIXED_win_125 - dfg_w6.gvSaving [Edges] comparing windows [4-5]
+check_finish - final_window 0 - metrics_count 8 - total de metricas 2
+
+calculate_metrics - current window 6 - initial_trace = 625
+Starting [Nodes] calculation between windows [5-6]
+check_finish - final_window 0 - metrics_count 9 - total de metricas 2
+Starting [Edges] calculation between windows [5-6]
+check_finish - final_window 0 - metrics_count 10 - total de metricas 2Generating model for sub-log [750 - 874] - window [6]
+
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_cf.xes\FIXED_win_125 - dfg_w7.gv
+calculate_metrics - current window 7 - initial_trace = 750
+Starting [Nodes] calculation between windows [6-7]
+check_finish - final_window 0 - metrics_count 11 - total de metricas 2
+Starting [Edges] calculation between windows [6-7]
+check_finish - final_window 0 - metrics_count 12 - total de metricas 2Analyzing final window... size 125 window_count 7
+
+Setting final window value 7
+Generating model for sub-log [875 - 999] - window [7]
+Saving data\output\script\models\dfg\sudden_trace_noise0_1000_cf.xes\FIXED_win_125 - dfg_w8.gv
+calculate_metrics - current window 8 - initial_trace = 875
+Starting [Nodes] calculation between windows [7-8]
+check_finish - final_window 7 - metrics_count 13 - total de metricas 2
+Starting [Edges] calculation between windows [7-8]
+check_finish - final_window 7 - metrics_count 14 - total de metricas 2Finished mining calculation
+
+
+***************************************************************************** Initial indexes for generated windows: {0: '0', 125: '125', 250: '250', 375: '375', 500: '500', 625: '625', 750: '750', 875: '875'}
+
+*** Number of windows: [8]*** Similarity metrics calculation finished for the file sudden_trace_noise0_1000_cf.xes
+
+**************************************************************************Waiting for IPDD finishes ... Status running: True
+
+Finished metrics calculation
+**************************************************************************
+Finishing monitoring thread for metrics calculation
+**************************************************************************
+IPDD finished drift analysis
+Saving drift windows: data\output\script\similarity_metrics\dfg\sudden_trace_noise0_1000_cf.xes\FIXED_win125_drift_windows.txt
+IPDD detect control-flow drift in windows [5] - traces [500]
+[0m
