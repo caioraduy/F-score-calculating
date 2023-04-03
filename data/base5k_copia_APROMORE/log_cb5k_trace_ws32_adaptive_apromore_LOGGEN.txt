@@ -1,0 +1,6 @@
+cb5k_LOGGENERATOR.xes
+runs
+Initial window size = 32
+Window type = ADWIN
+*********************************************
+

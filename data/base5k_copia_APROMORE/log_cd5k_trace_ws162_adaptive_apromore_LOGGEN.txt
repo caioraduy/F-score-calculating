@@ -1,0 +1,9 @@
+cd5k_LOGGENERATOR.xes
+runs
+Initial window size = 162
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 4190 (Sat May 09 08:20:40 BRT 1970) after reading 4251 traces.
+
+

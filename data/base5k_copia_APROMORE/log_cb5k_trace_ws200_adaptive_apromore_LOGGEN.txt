@@ -1,0 +1,33 @@
+cb5k_LOGGENERATOR.xes
+runs
+Initial window size = 200
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 637 (Tue Apr 28 12:55:40 BRT 1970) after reading 764 traces.
+
+
+(2) Sudden drift detected at trace: 1228 (Thu Apr 30 08:04:00 BRT 1970) after reading 1357 traces.
+
+
+(3) Sudden drift detected at trace: 1628 (Fri May 01 12:37:20 BRT 1970) after reading 1740 traces.
+
+
+(4) Sudden drift detected at trace: 2138 (Sun May 03 00:01:00 BRT 1970) after reading 2248 traces.
+
+
+(5) Sudden drift detected at trace: 2657 (Mon May 04 14:00:20 BRT 1970) after reading 2780 traces.
+
+
+(6) Sudden drift detected at trace: 3202 (Wed May 06 05:30:40 BRT 1970) after reading 3325 traces.
+
+
+(7) Sudden drift detected at trace: 3654 (Thu May 07 13:27:40 BRT 1970) after reading 3785 traces.
+
+
+(8) Sudden drift detected at trace: 4211 (Sat May 09 05:44:40 BRT 1970) after reading 4342 traces.
+
+
+(9) Sudden drift detected at trace: 4700 (Sun May 10 17:28:40 BRT 1970) after reading 4829 traces.
+
+

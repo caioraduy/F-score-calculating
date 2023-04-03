@@ -1,0 +1,33 @@
+IOR5k_LOGGENERATOR.xes
+runs
+Initial window size = 150
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 533 (Tue Apr 28 06:03:00 BRT 1970) after reading 629 traces.
+
+
+(2) Sudden drift detected at trace: 1045 (Wed Apr 29 19:53:20 BRT 1970) after reading 1141 traces.
+
+
+(3) Sudden drift detected at trace: 1567 (Fri May 01 10:49:00 BRT 1970) after reading 1653 traces.
+
+
+(4) Sudden drift detected at trace: 2042 (Sat May 02 21:54:00 BRT 1970) after reading 2134 traces.
+
+
+(5) Sudden drift detected at trace: 2549 (Mon May 04 11:03:00 BRT 1970) after reading 2645 traces.
+
+
+(6) Sudden drift detected at trace: 3040 (Tue May 05 22:39:20 BRT 1970) after reading 3140 traces.
+
+
+(7) Sudden drift detected at trace: 3540 (Thu May 07 11:18:40 BRT 1970) after reading 3630 traces.
+
+
+(8) Sudden drift detected at trace: 4041 (Sat May 09 00:10:40 BRT 1970) after reading 4127 traces.
+
+
+(9) Sudden drift detected at trace: 4535 (Sun May 10 10:44:00 BRT 1970) after reading 4617 traces.
+
+

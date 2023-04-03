@@ -113,18 +113,30 @@ def extracts_information_from_dataset1_IPDD_file(file_name):
     #print(f'Get information from IPDD framework: {file_name}')
     file_name_being_analyzed = file_name
     splitline = file_name_being_analyzed.split('_')
-    log_name = splitline[1]
-    approach = 'Trace'
-    windows_size = splitline[2]
-    if windows_size == None:
-        print("erro")
-    print(windows_size)
-    print(file_name)
-    windows_size = windows_size[2:]
-    windows_size = int(windows_size)
+    if 'LOGGENERATOR' in file_name:
+        log_name = splitline[1]+' '+splitline[2]
+        approach = 'Trace'
+        windows_size = splitline[3]
+        if windows_size == None:
+            print("erro")
+        windows_size = windows_size[2:]
+        windows_size = int(windows_size)
+        windowing_type = splitline[4]
+        windowing_type = windowing_type[0:-4]
+    else:
+        log_name = splitline[1]
+        approach = 'Trace'
+        windows_size = splitline[2]
+        if windows_size == None:
+            print("erro")
+            print(windows_size)
+        print(file_name)
+        windows_size = windows_size[2:]
+        windows_size = int(windows_size)
+        windowing_type = splitline[3]
+        windowing_type = windowing_type[0:-4]
 
-    windowing_type = splitline[3]
-    windowing_type = windowing_type[0:-4]
+
     #print(windowing_type)
     if windowing_type == None:
         print(file_name)
@@ -169,7 +181,7 @@ def extracts_information_from_dataset1_apromore_file(file_name):
     splitline = file_name_being_analyzed.split('_')
     log_name = splitline[1]
     approach = splitline[2]
-    windows_size = splitline[-3]
+    windows_size = splitline[3]
     windows_size = windows_size[2:]
     if windows_size == 'default':
         windows_size = 200
@@ -179,6 +191,8 @@ def extracts_information_from_dataset1_apromore_file(file_name):
     if windowing_type == 'fwin':  # for using the name in the paper
         windowing_type = 'fixed'
     tool = 'Apromore - ProDrift'
+    if 'LOGGENERATOR' in file_name:
+        log_name = log_name + splitline[6]
 
     return tool, log_name, approach, windowing_type, windows_size
 
@@ -573,7 +587,9 @@ if __name__ == '__main__':
     path_vdd_sudden_dataset2 = os.path.join('data', 'output_vdd_dataset2')
     path_IPDD_sudden_dataset1 = os.path.join('data', 'output_IPDD_dataset1_old')
     path_IPDD_sudden_dataset2 = os.path.join('data', 'output_IPDD_dataset2')
-    path_IPDD_sudden_fixed = os.path.join('data', 'dataset2')
+    teste_LOGGEN = os.path.join('data', 'base_5k_copia')
+    teste_LOGGEN2 = os.path.join('data', 'base5k_copia_APROMORE')
+
 
     vdd_match_string_change_points = 'x lines:'
 
@@ -596,7 +612,9 @@ if __name__ == '__main__':
    #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset1)
     #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset2)
 
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_fixed)
+    #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_fixed)
+    f_scores = f_scores + read_framework_output_and_calculate_f_score(teste_LOGGEN)
+    f_scores = f_scores + read_framework_output_and_calculate_f_score(teste_LOGGEN2)
 
 
 
