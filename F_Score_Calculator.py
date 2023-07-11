@@ -615,7 +615,7 @@ if __name__ == '__main__':
     # list containing all the calculated f_scores
     f_scores = []
     #APROMORE
-    #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset1)
+    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset1)
     #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset2)
 
     #IPDD
