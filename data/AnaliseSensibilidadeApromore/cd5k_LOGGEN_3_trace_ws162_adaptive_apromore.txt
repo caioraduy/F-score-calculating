@@ -1,0 +1,6 @@
+cd5k_LOGGEN_3.xes
+runs
+Initial window size = 162
+Window type = ADWIN
+*********************************************
+

@@ -1,0 +1,6 @@
+pm5k_LOGGEN_5.xes
+runs
+Initial window size = 32
+Window type = ADWIN
+*********************************************
+

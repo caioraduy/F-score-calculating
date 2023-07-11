@@ -1,0 +1,21 @@
+cb5k_LOGGEN_4.xes
+runs
+Initial window size = 50
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 1069 (Wed Apr 29 19:12:00 BRT 1970) after reading 1100 traces.
+
+
+(2) Sudden drift detected at trace: 1557 (Fri May 01 06:15:40 BRT 1970) after reading 1588 traces.
+
+
+(3) Sudden drift detected at trace: 2074 (Sat May 02 19:13:40 BRT 1970) after reading 2105 traces.
+
+
+(4) Sudden drift detected at trace: 2565 (Mon May 04 06:30:20 BRT 1970) after reading 2602 traces.
+
+
+(5) Sudden drift detected at trace: 4567 (Sun May 10 06:44:00 BRT 1970) after reading 4600 traces.
+
+

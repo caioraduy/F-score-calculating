@@ -176,23 +176,37 @@ def extracts_information_from_dataset2_IPDD_file(file_name):
 # this function extracts information of the archives .txt for the event logs
 # with 9 drift and 5000 traces for Apromore
 def extracts_information_from_dataset1_apromore_file(file_name):
-    print(f'Get information from Apromore: {file_name}')
-    file_name_being_analyzed = file_name
-    splitline = file_name_being_analyzed.split('_')
-    log_name = splitline[1]
-    approach = splitline[2]
-    windows_size = splitline[3]
-    windows_size = windows_size[2:]
-    if windows_size == 'default':
-        windows_size = 200
+    if 'LOGGEN' in file_name:
+        file_name_being_analyzed = file_name
+        splitline = file_name_being_analyzed.split('_')
+        log_name = splitline[0]+ '_' +splitline[1] + '_'+ splitline[2]
+        approach = splitline[3]
+        windows_size = splitline[4]
+        windows_size = windows_size[2:]
+        if windows_size == 'default':
+            windows_size = 200
+        else:
+            windows_size = int(windows_size)
+        windowing_type = splitline[5]
+        if windowing_type == 'fwin':  # for using the name in the paper
+            windowing_type = 'fixed'
+        tool = 'Apromore - ProDrift'
     else:
-        windows_size = int(windows_size)
-    windowing_type = splitline[4]
-    if windowing_type == 'fwin':  # for using the name in the paper
-        windowing_type = 'fixed'
-    tool = 'Apromore - ProDrift'
-    if 'LOGGENERATOR' in file_name:
-        log_name = log_name + splitline[6]
+        file_name_being_analyzed = file_name
+        splitline = file_name_being_analyzed.split('_')
+        log_name = splitline[1]
+        approach = splitline[2]
+        windows_size = splitline[3]
+        windows_size = windows_size[2:]
+        if windows_size == 'default':
+            windows_size = 200
+        else:
+            windows_size = int(windows_size)
+        windowing_type = splitline[4]
+        if windowing_type == 'fwin':  # for using the name in the paper
+            windowing_type = 'fixed'
+        tool = 'Apromore - ProDrift'
+
 
     return tool, log_name, approach, windowing_type, windows_size
 
@@ -396,7 +410,7 @@ def find_detected_drifts_calcule_f_score_apromore(f, approach, window_size, real
     f_score = 0
     if windowing_type == 'adaptive':
         # using 100 as error tolerance when evaluating adaptive approaches
-        f_score = calculate_f_score(drift, real_drifts, 100)
+        f_score = calculate_f_score(drift, real_drifts, window_size)
     else:
         f_score = calculate_f_score(drift, real_drifts, window_size)
     if len(real_drifts) == 9:
@@ -589,6 +603,7 @@ if __name__ == '__main__':
     path_IPDD_sudden_dataset2 = os.path.join('data', 'output_IPDD_dataset2')
     teste_LOGGEN = os.path.join('data', 'base_5k_copia')
     teste_LOGGEN2 = os.path.join('data', 'base5k_copia_APROMORE')
+    AnaliseSensibilidade_apromore = os.path.join('data', 'AnaliseSensibilidadeApromore')
 
 
     vdd_match_string_change_points = 'x lines:'
@@ -613,8 +628,12 @@ if __name__ == '__main__':
     #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_vdd_sudden_dataset2)
 
     #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_fixed)
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(teste_LOGGEN)
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(teste_LOGGEN2)
+    #f_scores = f_scores + read_framework_output_and_calculate_f_score(teste_LOGGEN)
+    #f_scores = f_scores + read_framework_output_and_calculate_f_score(teste_LOGGEN2)
+
+    #analise de sensibilidade do apromore usando o loggen
+    f_scores = f_scores + read_framework_output_and_calculate_f_score(AnaliseSensibilidade_apromore)
+
 
 
 
@@ -622,13 +641,13 @@ if __name__ == '__main__':
     # for the ProM Concept Drift we have to manually input the detected drifts based on the
     # information from the plots
     # Dataset 1
-    real_drifts_dataset1 = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
-    et = 100
-    f_scores = f_scores + get_prom_f_scores_dataset1(real_drifts_dataset1, et)
+    #real_drifts_dataset1 = [500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500]
+    #et = 100
+    #f_scores = f_scores + get_prom_f_scores_dataset1(real_drifts_dataset1, et)
     # Dataset 2
-    real_drifts_dataset2 = [500]
-    et = 100
-    f_scores = f_scores + get_prom_f_scores_dataset2(real_drifts_dataset2, et)
+    #real_drifts_dataset2 = [500]
+    #et = 100
+    #f_scores = f_scores + get_prom_f_scores_dataset2(real_drifts_dataset2, et)
 
 
     #print(f_scores)

@@ -1,0 +1,9 @@
+OIR5k_LOGGEN_3.xes
+runs
+Initial window size = 50
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 584 (Tue Apr 28 17:24:00 BRT 1970) after reading 801 traces.
+
+

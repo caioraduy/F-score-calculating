@@ -1,0 +1,30 @@
+ORI5k_LOGGEN_9.xes
+runs
+Initial window size = 200
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 546 (Tue Apr 28 07:34:40 BRT 1970) after reading 746 traces.
+
+
+(2) Sudden drift detected at trace: 1391 (Fri May 01 05:23:40 BRT 1970) after reading 1593 traces.
+
+
+(3) Sudden drift detected at trace: 1924 (Sun May 03 05:25:40 BRT 1970) after reading 2144 traces.
+
+
+(4) Sudden drift detected at trace: 2422 (Mon May 04 20:30:00 BRT 1970) after reading 2653 traces.
+
+
+(5) Sudden drift detected at trace: 2977 (Wed May 06 21:33:40 BRT 1970) after reading 3206 traces.
+
+
+(6) Sudden drift detected at trace: 3381 (Fri May 08 02:11:40 BRT 1970) after reading 3581 traces.
+
+
+(7) Sudden drift detected at trace: 3915 (Sun May 10 01:10:40 BRT 1970) after reading 4119 traces.
+
+
+(8) Sudden drift detected at trace: 4359 (Mon May 11 11:02:00 BRT 1970) after reading 4571 traces.
+
+

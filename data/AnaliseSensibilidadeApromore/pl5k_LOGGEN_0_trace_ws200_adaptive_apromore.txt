@@ -1,0 +1,6 @@
+pl5k_LOGGEN_0.xes
+runs
+Initial window size = 200
+Window type = ADWIN
+*********************************************
+

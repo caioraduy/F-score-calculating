@@ -1,0 +1,9 @@
+ROI5k_LOGGEN_2.xes
+runs
+Initial window size = 162
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 545 (Tue Apr 28 06:13:20 BRT 1970) after reading 778 traces.
+
+

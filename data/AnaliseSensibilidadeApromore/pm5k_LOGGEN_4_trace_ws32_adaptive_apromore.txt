@@ -1,0 +1,9 @@
+pm5k_LOGGEN_4.xes
+runs
+Initial window size = 32
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 4537 (Sun May 10 01:45:00 BRT 1970) after reading 4559 traces.
+
+

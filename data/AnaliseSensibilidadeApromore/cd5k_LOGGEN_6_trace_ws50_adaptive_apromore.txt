@@ -1,0 +1,9 @@
+cd5k_LOGGEN_6.xes
+runs
+Initial window size = 50
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 1902 (Sat May 02 08:56:00 BRT 1970) after reading 1918 traces.
+
+

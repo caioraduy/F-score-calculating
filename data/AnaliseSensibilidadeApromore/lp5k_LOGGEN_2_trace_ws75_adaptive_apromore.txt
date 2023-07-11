@@ -1,0 +1,30 @@
+lp5k_LOGGEN_2.xes
+runs
+Initial window size = 75
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 579 (Tue Apr 28 08:32:40 BRT 1970) after reading 686 traces.
+
+
+(2) Sudden drift detected at trace: 1171 (Thu Apr 30 05:26:40 BRT 1970) after reading 1276 traces.
+
+
+(3) Sudden drift detected at trace: 1553 (Fri May 01 09:33:20 BRT 1970) after reading 1663 traces.
+
+
+(4) Sudden drift detected at trace: 2119 (Sun May 03 03:29:40 BRT 1970) after reading 2231 traces.
+
+
+(5) Sudden drift detected at trace: 2594 (Mon May 04 14:20:20 BRT 1970) after reading 2721 traces.
+
+
+(6) Sudden drift detected at trace: 3533 (Thu May 07 13:00:40 BRT 1970) after reading 3645 traces.
+
+
+(7) Sudden drift detected at trace: 4176 (Sat May 09 14:06:20 BRT 1970) after reading 4290 traces.
+
+
+(8) Sudden drift detected at trace: 4558 (Sun May 10 18:10:20 BRT 1970) after reading 4657 traces.
+
+

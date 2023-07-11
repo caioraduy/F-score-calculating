@@ -1,0 +1,30 @@
+ROI5k_LOGGEN_9.xes
+runs
+Initial window size = 100
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 547 (Tue Apr 28 06:49:20 BRT 1970) after reading 718 traces.
+
+
+(2) Sudden drift detected at trace: 1309 (Thu Apr 30 18:46:20 BRT 1970) after reading 1510 traces.
+
+
+(3) Sudden drift detected at trace: 1874 (Sat May 02 16:12:20 BRT 1970) after reading 2075 traces.
+
+
+(4) Sudden drift detected at trace: 2350 (Mon May 04 03:30:00 BRT 1970) after reading 2546 traces.
+
+
+(5) Sudden drift detected at trace: 2778 (Tue May 05 13:13:20 BRT 1970) after reading 2947 traces.
+
+
+(6) Sudden drift detected at trace: 3292 (Thu May 07 04:29:00 BRT 1970) after reading 3485 traces.
+
+
+(7) Sudden drift detected at trace: 3861 (Sat May 09 01:36:00 BRT 1970) after reading 4058 traces.
+
+
+(8) Sudden drift detected at trace: 4382 (Sun May 10 17:27:20 BRT 1970) after reading 4588 traces.
+
+

@@ -1,0 +1,33 @@
+RIO5k_LOGGEN_5.xes
+runs
+Initial window size = 150
+Window type = ADWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 524 (Tue Apr 28 03:46:20 BRT 1970) after reading 644 traces.
+
+
+(2) Sudden drift detected at trace: 1119 (Thu Apr 30 00:37:40 BRT 1970) after reading 1246 traces.
+
+
+(3) Sudden drift detected at trace: 1650 (Fri May 01 15:37:20 BRT 1970) after reading 1772 traces.
+
+
+(4) Sudden drift detected at trace: 2118 (Sun May 03 03:20:40 BRT 1970) after reading 2240 traces.
+
+
+(5) Sudden drift detected at trace: 2625 (Mon May 04 16:24:00 BRT 1970) after reading 2747 traces.
+
+
+(6) Sudden drift detected at trace: 3111 (Wed May 06 03:44:00 BRT 1970) after reading 3224 traces.
+
+
+(7) Sudden drift detected at trace: 3542 (Thu May 07 10:42:20 BRT 1970) after reading 3666 traces.
+
+
+(8) Sudden drift detected at trace: 4104 (Sat May 09 04:19:00 BRT 1970) after reading 4220 traces.
+
+
+(9) Sudden drift detected at trace: 4510 (Sun May 10 09:42:40 BRT 1970) after reading 4624 traces.
+
+
