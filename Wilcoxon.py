@@ -33,6 +33,8 @@ for pattern in ch:
         print(f'{pattern}{i}')
         zero_sample_1 = sum(sample1.isin([0]))
         zero_sample_2 = sum(sample2.isin([0]))
+]
+
 
         if zero_sample_1 == 8 or zero_sample_2 == 8:
             print('Não é possível aplicar o Wilcoxon')
