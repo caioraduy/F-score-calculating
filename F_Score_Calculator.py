@@ -113,16 +113,15 @@ def extracts_information_from_dataset1_IPDD_file(file_name):
     #print(f'Get information from IPDD framework: {file_name}')
     file_name_being_analyzed = file_name
     splitline = file_name_being_analyzed.split('_')
-    if 'LOGGENERATOR' in file_name:
-        log_name = splitline[1]+' '+splitline[2]
+    if 'LOGGEN' in file_name:
+        log_name = splitline[1]+'_'+splitline[2]+'_'+splitline[3]
         approach = 'Trace'
-        windows_size = splitline[3]
+        windows_size = splitline[4]
         if windows_size == None:
             print("erro")
         windows_size = windows_size[2:]
         windows_size = int(windows_size)
-        windowing_type = splitline[4]
-        windowing_type = windowing_type[0:-4]
+        windowing_type = splitline[5]
     else:
         log_name = splitline[1]
         approach = 'Trace'
@@ -604,6 +603,7 @@ if __name__ == '__main__':
     teste_LOGGEN = os.path.join('data', 'base_5k_copia')
     teste_LOGGEN2 = os.path.join('data', 'base5k_copia_APROMORE')
     AnaliseSensibilidade_apromore = os.path.join('data', 'AnaliseSensibilidadeApromore')
+    AnaliseSensibilidade_IPDD = os.path.join('data\\AnaliseSensibilidadeIPDD', 'analise_sensibilidade_ipdd')
 
 
     vdd_match_string_change_points = 'x lines:'
@@ -619,7 +619,7 @@ if __name__ == '__main__':
     #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_output_apromore_dataset2)
 
     #IPDD
-    #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset1)
+    f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset1)
     #f_scores = f_scores + read_framework_output_and_calculate_f_score(path_IPDD_sudden_dataset2)
 
 
@@ -633,6 +633,7 @@ if __name__ == '__main__':
 
     #analise de sensibilidade do apromore usando o loggen
     f_scores = f_scores + read_framework_output_and_calculate_f_score(AnaliseSensibilidade_apromore)
+    f_scores = f_scores + read_framework_output_and_calculate_f_score(AnaliseSensibilidade_IPDD)
 
 
 
