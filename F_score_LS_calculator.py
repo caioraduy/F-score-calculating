@@ -41,20 +41,21 @@ def calculate_f_score(detected_drifts_list, real_drifts, error_tolerance):
 
 
 # this function extracts the information of the file with the output of ProDrift Plugin
-def extracts_information_from_dataset2_apromore_file(file_name):
+def extracts_information_from_dataset4_apromore_file(file_name):
     start = file_name.find("log_") + len("log_")
     end = file_name.find("_trace_ws")
     log_name = file_name[start:end]
 
     splitline = file_name[end + 1:].split('_')
     tool = 'Apromore - ProDrift'
-    approach = splitline[0]
+    approach = 'trace'
     windows_size = splitline[1]
     windows_size = windows_size[2:]
-    windowing_type = splitline[2]
+    windowing_type = splitline[-2]
     if windowing_type == 'fwin':  # for using the name in the paper
         windowing_type = 'fixed'
-    # log_name = splitline[1] + ' ' + splitline[2] + ' ' + splitline[3]
+    split = file_name.split('_')
+    log_name = split[0] + '_' + split[1]
 
     if windows_size == 'default':
         windows_size = 200
@@ -65,28 +66,29 @@ def extracts_information_from_dataset2_apromore_file(file_name):
 
 
 # this function extracts information from the archive of the bases with 1000 and 1 drift a VDD
-def extracts_information_from_dataset2_VDD_file(file_name):
+def extracts_information_from_dataset4_VDD_file(file_name):
     print(f'Get information from VDD: {file_name}')
     file_name_being_analyzed = file_name
     splitline = file_name_being_analyzed.split('_')
     windowing_type = 'fixed'
-    approach = splitline[1]
-    log_name = splitline[0] + ' ' + splitline[3] + ' ' + splitline[4]
-    windows_size = splitline[6]
+    approach = 'trace'
+    log_name = splitline[0] + '_' + splitline[1]
+    windows_size = splitline[2]
     windows_size = int(windows_size[4:])
     tool = 'VDD'
-    win_step = splitline[7]
+    win_step = splitline[3]
     win_step = int(win_step[5:])
 
 
     return tool, log_name, approach, windowing_type, windows_size, win_step
 
 
-def extracts_information_from_dataset2_IPDD_file(file_name):
+def extracts_information_from_dataset4_IPDD_file(file_name):
     #print(f'Get information from IPDD framework: {file_name}')
     file_name_being_analyzed = file_name
+    tool = 'IPDD'
     splitline = file_name_being_analyzed.split('_')
-    log_name = splitline[1] +'_' + splitline[2] + '_' + splitline[3] +'_'+ splitline[4] +'_'+ splitline[5]
+    log_name = splitline[1] +'_' + splitline[2]
     approach = 'Trace'
     windows_size = splitline[-2]
     if windows_size == None:
@@ -94,18 +96,14 @@ def extracts_information_from_dataset2_IPDD_file(file_name):
     #print(windows_size)
     windows_size = windows_size[2:]
     windows_size = int(windows_size)
-
-    windowing_type = splitline[7]
+    dataset ='4'
+    windowing_type = splitline[-1]
     windowing_type = windowing_type[0:-4]
     #print(windowing_type)
     if windowing_type == None:
         print(file_name)
 
-    tool = 'IPDD'
-    dataset = 2
-    real_drift =[500]
-    #print(log_name)
-    return tool, log_name, approach, windowing_type, windows_size, dataset, real_drift
+    return tool, log_name, approach, windowing_type, windows_size, dataset
 
 
 # this function extracts information of the archives .txt for the event logs
@@ -144,18 +142,17 @@ def find_detected_drift_and_calculate_f_score_vdd(f, approach,
                 trace = x * win_step + 1
                 trace_with_drift_VDD.append(trace)
             f_score = calculate_f_score(trace_with_drift_VDD, real_drift_list, window_size)
-            if len(real_drifts) == 9:
-                dataset = 1
-            else:
-                dataset = 2
-            new_line = {'Tool': tool,
-                        'Dataset': dataset,
+            print(new_line)
+
+            new_line = {'Tool': 'VDD',
+                        'Dataset': 4,
                         'Event Log Name': log_name,
                         'Approach': windowing_type,
                         "Window's size": window_size,
                         'F-score': f_score,
                         'Real drifts': real_drift_list,
                         'Detected drifts': trace_with_drift_VDD}
+            print(new_line)
             break
         if search_in_vdd_console in line:
             found = True
@@ -190,17 +187,17 @@ def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_
 
         elif search_in_IPDD_console_detected_drifts in line:
             found_fixed = True
-            print(line)
+            #print(line)
             splitline = line.split('traces')
-            print(splitline)
+            #print(splitline)
             # LISTA DE DRIFTS REAIS
             detected_drift = splitline[1].split('[')
-            print(detected_drift)
+            #print(detected_drift)
             detected_drift = detected_drift[1].split(']')
-            print('----------')
-            print(detected_drift)
+            #print('----------')
+            #print(detected_drift)
             detected_drift = detected_drift[0].split(',')
-            print(detected_drift)
+            #print(detected_drift)
 
             for i in range(0, len(detected_drift)):
                 if not detected_drift[i]:
@@ -214,8 +211,8 @@ def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_
         elif found_fixed:
             pass
     print(detected_drift)
-
-    f_score = calculate_f_score(detected_drift, real_drift, 100)
+    print(real_drift)
+    f_score = calculate_f_score(detected_drift, real_drift, windows_size)
 
 
 
@@ -227,6 +224,7 @@ def find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach, windowing_
                         'F-score': f_score,
                         'Real drifts': real_drift,
                         'Detected drifts': detected_drift}
+    print('IPDD')
     print(new_line)
 
 
@@ -240,24 +238,19 @@ def find_detected_drifts_calcule_f_score_apromore(f, approach, window_size, real
                                                   tool, log_name, windowing_type):
     drift = []
     for line in f:
+        #print(line)
         splitline = line.split(' ')
         if len(splitline) > 7:
             if approach == 'trace':
                 drift.append(int(splitline[6]))
             elif approach == 'event':
                 drift.append(int(splitline[5]))
+    #print(drift)
     f_score = 0
-    if windowing_type == 'adaptive':
-        # using 100 as error tolerance when evaluating adaptive approaches
-        f_score = calculate_f_score(drift, real_drifts, window_size)
-    else:
-        f_score = calculate_f_score(drift, real_drifts, window_size)
-    if len(real_drifts) == 9:
-        dataset = 1
-    else:
-        dataset = 2
+    f_score = calculate_f_score(drift, real_drifts, window_size)
+
     new_line = {'Tool': tool,
-                'Dataset': dataset,
+                'Dataset': 4,
                 'Event Log Name': log_name,
                 'Approach': windowing_type,
                 "Window's size": window_size,
@@ -265,7 +258,42 @@ def find_detected_drifts_calcule_f_score_apromore(f, approach, window_size, real
                 'Real drifts': real_drifts,
                 'Detected drifts': drift}
     return new_line
+def real_drift(file):
+    if 'LS1' in file:
+        real_drift= [300,500]
+        if 'LS10' in file:
+            real_drift = [900, 1500, 2100]
+        elif 'LS11' in file:
+            real_drift = [900, 1500, 2100]
+        elif 'LS12' in file:
+            real_drift = [999, 1320, 2050, 3050]
+        elif 'LS13' in file:
+            real_drift = [999, 1320, 2050, 3050]
+        elif 'LS14' in file:
+            real_drift = [1000, 2000, 3000, 4000]
+        elif 'LS15' in file:
+            real_drift = [100, 300, 800, 1000, 1500, 2000, 3600, 3800, 3900, 4001]
+        else:
+            real_drift = [300, 500]
 
+    if 'LS2' in file:
+        real_drift= [300,500]
+    if 'LS3' in file:
+        real_drift= [300,500]
+    if 'LS4' in file:
+        real_drift= [300,500]
+    if 'LS5' in file:
+        real_drift= [300,1000]
+    if 'LS6' in file:
+        real_drift= [600,1000]
+    if 'LS7' in file:
+        real_drift= [600,1000]
+    if 'LS8' in file:
+        real_drift= [900, 1500, 2100]
+    if 'LS9' in file:
+        real_drift= [300, 1000, 1900]
+
+    return real_drift
 
 
 
@@ -279,43 +307,23 @@ def read_framework_output_and_calculate_f_score(path_search):
 
             if 'apromore' in file:
                 tool, log_name, approach, windowing_type, window_size \
-                    = extracts_information_from_dataset1_apromore_file(file)
-                elif 'vdd' in file:
-                    tool, log_name, approach, windowing_type, window_size, win_step \
-                        = extracts_information_from_dataset1_VDD_file(file)
-                elif 'IPDD' in file:
-                    tool, log_name, approach, windowing_type, window_size, dataset,\
-                    real_drift = extracts_information_from_dataset1_IPDD_file(file)
-
-                real_drifts = finds_real_drifts_dataset1(approach, file)
-            elif '1000' in file:
-                if 'apromore' in file:
-                    tool, log_name, approach, windowing_type, window_size \
-                        = extracts_information_from_dataset2_apromore_file(file)
-                elif 'vdd' in file:
-                    tool, log_name, approach, windowing_type, window_size, win_step \
-                        = extracts_information_from_dataset2_VDD_file(file)
-                elif 'IPDD' in file:
-                    tool, log_name, approach, windowing_type, window_size, dataset,\
-                        real_drift = extracts_information_from_dataset2_IPDD_file(file)
-            elif 'LS' in file:
-                if 'apromore' in file:
-                    tool, log_name, approach, windowing_type, window_size \
-                        = extracts_information_from_dataset4_apromore_file(file)
-                elif 'vdd' in file:
-                    tool, log_name, approach, windowing_type, window_size, win_step \
+                    = extracts_information_from_dataset4_apromore_file(file)
+            elif 'subL' in file:
+                tool, log_name, approach, windowing_type, window_size, win_step \
                         = extracts_information_from_dataset4_VDD_file(file)
-                elif 'IPDD' in file:
-                    tool, log_name, approach, windowing_type, window_size, dataset,\
-                        real_drift = extracts_information_from_dataset4_IPDD_file(file)
+            elif 'IPDD' in file:
+                tool, log_name, approach, windowing_type, window_size, dataset\
+                    = extracts_information_from_dataset4_IPDD_file(file)
 
-                real_drifts = finds_real_drifts_dataset2(approach, file)
+            real_drifts = real_drift(file)
+
+
             with open(full_path, 'r', errors='ignore') as f:
                 if 'apromore' in file:
                     f_scores_complete.append(find_detected_drifts_calcule_f_score_apromore(f, approach, window_size,
                                                                                            real_drifts, tool,
                                                                                            log_name, windowing_type))
-                elif 'vdd' in file:
+                elif 'subL' in file:
                     f_scores_complete.append(find_detected_drift_and_calculate_f_score_vdd(f, approach, window_size,
                                                                                            real_drifts, tool,
                                                                                            log_name, windowing_type,
@@ -323,7 +331,7 @@ def read_framework_output_and_calculate_f_score(path_search):
                 elif 'IPDD' in file:
                     f_scores_complete.append(find_detected_drift_and_f_score_IPDD(f, tool, log_name, approach,
                                                                                   windowing_type, window_size,
-                                                                                  dataset, real_drift))
+                                                                                  dataset, real_drifts))
     return f_scores_complete
 
 
@@ -337,7 +345,7 @@ if __name__ == '__main__':
 
     vdd_match_string_change_points = 'x lines:'
 
-
+    f_scores = []
     # DATASET4
     f_scores = f_scores + read_framework_output_and_calculate_f_score(dataset4_apromore)
     f_scores = f_scores + read_framework_output_and_calculate_f_score(dataset4_IPDD)
