@@ -1,0 +1,15 @@
+LS8_ABRUPTO.xes
+runs
+Initial window size = 50
+Window type = FWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 937 (Fri Jul 16 09:29:40 BRT 2021) after reading 953 traces.
+
+
+(2) Sudden drift detected at trace: 1535 (Tue Jul 20 09:57:40 BRT 2021) after reading 1551 traces.
+
+
+(3) Sudden drift detected at trace: 2129 (Thu Jul 22 04:24:20 BRT 2021) after reading 2145 traces.
+
+

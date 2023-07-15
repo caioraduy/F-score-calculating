@@ -1,0 +1,12 @@
+LS6_INCREMENTAL.xes
+runs
+Initial window size = 100
+Window type = FWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 636 (Thu Jul 15 08:38:00 BRT 2021) after reading 669 traces.
+
+
+(2) Sudden drift detected at trace: 1078 (Fri Jul 16 17:09:20 BRT 2021) after reading 1111 traces.
+
+

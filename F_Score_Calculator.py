@@ -604,6 +604,10 @@ if __name__ == '__main__':
     teste_LOGGEN2 = os.path.join('data', 'base5k_copia_APROMORE')
     AnaliseSensibilidade_apromore = os.path.join('data', 'AnaliseSensibilidadeApromore')
     AnaliseSensibilidade_IPDD = os.path.join('data\\AnaliseSensibilidadeIPDD', 'analise_sensibilidade_ipdd')
+    dataset4_apromore = os.path.join('data', 'AnaliseSensibilidadeApromore')
+    dataset4_IPDD = os.path.join('data\\AnaliseSensibilidadeIPDD', 'analise_sensibilidade_ipdd')
+    AnaliseSensibilidade_apromore = os.path.join('data', 'AnaliseSensibilidadeApromore')
+
 
 
     vdd_match_string_change_points = 'x lines:'
@@ -632,8 +636,8 @@ if __name__ == '__main__':
     #f_scores = f_scores + read_framework_output_and_calculate_f_score(teste_LOGGEN2)
 
     #analise de sensibilidade do apromore usando o loggen
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(AnaliseSensibilidade_apromore)
-    f_scores = f_scores + read_framework_output_and_calculate_f_score(AnaliseSensibilidade_IPDD)
+    #f_scores = f_scores + read_framework_output_and_calculate_f_score(AnaliseSensibilidade_apromore)
+    #f_scores = f_scores + read_framework_output_and_calculate_f_score(AnaliseSensibilidade_IPDD)
 
 
 
@@ -667,6 +671,6 @@ if __name__ == '__main__':
     output_path = os.path.join('data', 'outputdata')
     if not os.path.exists(output_path):
         os.makedirs(output_path)
-    output_filename = os.path.join(output_path, 'F_Score_Results.xlsx')
+    output_filename = os.path.join(output_path, 'F_Score_Results_DATASET4.xlsx')
     # export to excel file
     df.to_excel(output_filename, index=False)

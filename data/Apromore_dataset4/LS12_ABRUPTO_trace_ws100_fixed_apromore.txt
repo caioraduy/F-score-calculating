@@ -1,0 +1,18 @@
+LS12_ABRUPTO.xes
+runs
+Initial window size = 100
+Window type = FWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 1019 (Fri Jul 16 12:11:20 BRT 2021) after reading 1052 traces.
+
+
+(2) Sudden drift detected at trace: 1379 (Sat Jul 17 17:30:00 BRT 2021) after reading 1412 traces.
+
+
+(3) Sudden drift detected at trace: 2092 (Thu Jul 22 11:16:20 BRT 2021) after reading 2125 traces.
+
+
+(4) Sudden drift detected at trace: 3066 (Sun Jul 25 08:24:00 BRT 2021) after reading 3099 traces.
+
+

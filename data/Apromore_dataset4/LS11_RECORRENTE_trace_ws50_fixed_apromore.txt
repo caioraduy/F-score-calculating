@@ -1,0 +1,18 @@
+LS11_RECORRENTE.xes
+runs
+Initial window size = 50
+Window type = FWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 552 (Tue Apr 28 07:55:40 BRT 1970) after reading 568 traces.
+
+
+(2) Sudden drift detected at trace: 934 (Wed Apr 29 15:28:40 BRT 1970) after reading 950 traces.
+
+
+(3) Sudden drift detected at trace: 1539 (Sun May 03 16:25:00 BRT 1970) after reading 1555 traces.
+
+
+(4) Sudden drift detected at trace: 2141 (Tue May 05 15:18:00 BRT 1970) after reading 2157 traces.
+
+

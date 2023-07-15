@@ -1,0 +1,6 @@
+LS4_RECORRENTE.xes
+runs
+Initial window size = 50
+Window type = FWIN
+*********************************************
+

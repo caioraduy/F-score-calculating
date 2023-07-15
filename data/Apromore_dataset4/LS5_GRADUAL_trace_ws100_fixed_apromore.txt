@@ -1,0 +1,12 @@
+LS5_GRADUAL.xes
+runs
+Initial window size = 100
+Window type = FWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 421 (Wed Jul 14 15:47:40 BRT 2021) after reading 454 traces.
+
+
+(2) Sudden drift detected at trace: 1082 (Fri Jul 16 15:56:00 BRT 2021) after reading 1115 traces.
+
+

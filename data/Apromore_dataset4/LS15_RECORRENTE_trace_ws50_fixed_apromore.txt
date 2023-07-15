@@ -1,0 +1,36 @@
+LS15_RECORRENTE.xes
+runs
+Initial window size = 50
+Window type = FWIN
+*********************************************
+
+(1) Sudden drift detected at trace: 118 (Sun Apr 26 22:52:20 BRT 1970) after reading 134 traces.
+
+
+(2) Sudden drift detected at trace: 326 (Mon Apr 27 13:09:00 BRT 1970) after reading 342 traces.
+
+
+(3) Sudden drift detected at trace: 820 (Wed Apr 29 02:05:00 BRT 1970) after reading 836 traces.
+
+
+(4) Sudden drift detected at trace: 1019 (Wed Apr 29 15:03:20 BRT 1970) after reading 1035 traces.
+
+
+(5) Sudden drift detected at trace: 1524 (Fri May 01 03:33:00 BRT 1970) after reading 1540 traces.
+
+
+(6) Sudden drift detected at trace: 2021 (Sat May 02 13:16:00 BRT 1970) after reading 2037 traces.
+
+
+(7) Sudden drift detected at trace: 3618 (Thu May 07 08:05:20 BRT 1970) after reading 3634 traces.
+
+
+(8) Sudden drift detected at trace: 3818 (Thu May 07 21:34:00 BRT 1970) after reading 3834 traces.
+
+
+(9) Sudden drift detected at trace: 3920 (Fri May 08 04:58:00 BRT 1970) after reading 3936 traces.
+
+
+(10) Sudden drift detected at trace: 4023 (Fri May 08 11:41:00 BRT 1970) after reading 4039 traces.
+
+

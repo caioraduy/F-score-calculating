@@ -1,0 +1,9 @@
+LS13_GRADUAL.xes
+runs
+Initial window size = 50
+Window type = FWIN
+*********************************************
+
+(1) Gradual drift detected between trace: 902 (Thu Jul 15 23:53:40 BRT 2021) and trace: 3040 (Thu Jul 22 01:10:20 BRT 2021).
+
+
