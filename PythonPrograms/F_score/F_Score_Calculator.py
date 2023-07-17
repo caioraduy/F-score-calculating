@@ -594,27 +594,27 @@ if __name__ == '__main__':
     # by VDD should be placed
     # The files must be downloaded from Kaggle and copied into the folder because the files contains more than 100MB
     # Both files are available at https://www.kaggle.com/caioraduy/output-off-vdd-experiments
-    path_output_apromore_dataset1 = os.path.join('data', 'output_apromore_dataset1')
-    path_output_apromore_dataset2 = os.path.join('data', 'output_apromore_dataset2')
-    path_vdd_sudden_dataset1 = os.path.join('data', 'output_vdd_dataset1')
-    path_vdd_sudden_dataset2 = os.path.join('data', 'output_vdd_dataset2')
-    path_IPDD_sudden_dataset1 = os.path.join('data', 'output_IPDD_dataset1_old')
-    path_IPDD_sudden_dataset2 = os.path.join('data', 'output_IPDD_dataset2')
-    teste_LOGGEN = os.path.join('data', 'base_5k_copia')
-    teste_LOGGEN2 = os.path.join('data', 'base5k_copia_APROMORE')
-    AnaliseSensibilidade_apromore = os.path.join('data', 'AnaliseSensibilidadeApromore')
-    AnaliseSensibilidade_IPDD = os.path.join('data\\AnaliseSensibilidadeIPDD', 'analise_sensibilidade_ipdd')
-    dataset4_apromore = os.path.join('data', 'AnaliseSensibilidadeApromore')
-    dataset4_IPDD = os.path.join('data\\AnaliseSensibilidadeIPDD', 'analise_sensibilidade_ipdd')
-    AnaliseSensibilidade_apromore = os.path.join('data', 'AnaliseSensibilidadeApromore')
+    path_output_apromore_dataset1 = os.path.join('../../data', 'output_apromore_dataset1')
+    path_output_apromore_dataset2 = os.path.join('../../data', 'output_apromore_dataset2')
+    path_vdd_sudden_dataset1 = os.path.join('../../data', 'output_vdd_dataset1')
+    path_vdd_sudden_dataset2 = os.path.join('../../data', 'output_vdd_dataset2')
+    path_IPDD_sudden_dataset1 = os.path.join('../../data', 'output_IPDD_dataset1_old')
+    path_IPDD_sudden_dataset2 = os.path.join('../../data', 'output_IPDD_dataset2')
+    teste_LOGGEN = os.path.join('../../data', 'base_5k_copia')
+    teste_LOGGEN2 = os.path.join('../../data', 'base5k_copia_APROMORE')
+    AnaliseSensibilidade_apromore = os.path.join('../../data', 'AnaliseSensibilidadeApromore')
+    AnaliseSensibilidade_IPDD = os.path.join('../../data/AnaliseSensibilidadeIPDD', 'analise_sensibilidade_ipdd')
+    dataset4_apromore = os.path.join('../../data', 'AnaliseSensibilidadeApromore')
+    dataset4_IPDD = os.path.join('../../data/AnaliseSensibilidadeIPDD', 'analise_sensibilidade_ipdd')
+    AnaliseSensibilidade_apromore = os.path.join('../../data', 'AnaliseSensibilidadeApromore')
 
 
 
     vdd_match_string_change_points = 'x lines:'
 
     # path to the original event logs
-    path_logs_5k = os.path.join('data', 'data_5k')
-    path_logs_1000 = os.path.join('data', 'data_1000')
+    path_logs_5k = os.path.join('../../data', 'data_5k')
+    path_logs_1000 = os.path.join('../../data', 'data_1000')
 
     # list containing all the calculated f_scores
     f_scores = []
@@ -668,7 +668,7 @@ if __name__ == '__main__':
         #print(i)
     # convert to dataframe
     df = pd.DataFrame(f_scores)
-    output_path = os.path.join('data', 'outputdata')
+    output_path = os.path.join('../../data', 'outputdata')
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     output_filename = os.path.join(output_path, 'F_Score_Results_DATASET4.xlsx')

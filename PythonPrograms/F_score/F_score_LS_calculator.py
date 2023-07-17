@@ -337,9 +337,9 @@ def read_framework_output_and_calculate_f_score(path_search):
 
 if __name__ == '__main__':
 
-    dataset4_apromore = os.path.join('data', 'Apromore_dataset4')
-    dataset4_IPDD = os.path.join('data', 'IPDD_dataset4')
-    dataset4_vdd = os.path.join('data', 'VDD_dataset4')
+    dataset4_apromore = os.path.join('../../data', 'Apromore_dataset4')
+    dataset4_IPDD = os.path.join('../../data', 'IPDD_dataset4')
+    dataset4_vdd = os.path.join('../../data', 'VDD_dataset4')
 
 
 
@@ -357,7 +357,7 @@ if __name__ == '__main__':
 
 
     df = pd.DataFrame(f_scores)
-    output_path = os.path.join('data', 'outputdata')
+    output_path = os.path.join('../../data', 'outputdata')
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     output_filename = os.path.join(output_path, 'F_Score_Results_DATASET4.xlsx')
